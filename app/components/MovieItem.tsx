@@ -45,7 +45,11 @@ const MovieItem: React.FC<Props> = (props) => {
         timingFunction="ease"
       >
         {(style) => (
-          <Link to={`/movie/${data.id}`} style={{ textDecoration: "none" }}>
+          <Link
+            to={`/movie/${data.id}`}
+            style={{ textDecoration: "none" }}
+            prefetch="intent"
+          >
             <Card
               shadow="sm"
               radius="md"

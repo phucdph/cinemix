@@ -22,6 +22,7 @@ import {
   IconHeadphones,
 } from "@tabler/icons-react";
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import useGetImagePath from "~/hooks/useGetImagePath";
 import movieService from "~/services/movie/movieService";
 import { numberFormatter } from "~/utils/formatters";
@@ -47,7 +48,11 @@ const MovieDetail: React.FC<Props> = (props) => {
   const data = useLoaderData<typeof loader>();
   const getImagePath = useGetImagePath();
 
-  console.log(data);
+  const { inView, ref } = useInView({
+    delay: 500,
+    initialInView: false,
+    fallbackInView: true,
+  });
 
   return (
     <Container size="lg" px={{ xs: "md" }} my="md">
@@ -55,6 +60,7 @@ const MovieDetail: React.FC<Props> = (props) => {
         <Grid.Col xs={12} sm={4} md={4}>
           <AspectRatio ratio={2 / 3} w="100%">
             <Image
+              ref={ref}
               withPlaceholder
               placeholder={
                 <Box
@@ -70,7 +76,7 @@ const MovieDetail: React.FC<Props> = (props) => {
                   <Overlay blur={10} />
                 </Box>
               }
-              src={getImagePath(data?.poster_path)}
+              src={inView ? getImagePath(data?.poster_path) : null}
               width="100%"
               height="100%"
               alt={data?.title}

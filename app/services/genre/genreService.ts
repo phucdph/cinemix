@@ -10,6 +10,7 @@ class GenreService extends RestAPIClient {
     const res = await this.get("/movie/list");
     return res.genres;
   };
+
 }
 
 export default new GenreService();

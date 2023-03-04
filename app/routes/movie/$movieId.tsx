@@ -3,29 +3,30 @@ import {
   Badge,
   Box,
   Button,
+  Card,
   Container,
   Flex,
   Grid,
   Group,
-  Image,
-  Overlay,
   Rating,
+  SimpleGrid,
   Text,
 } from "@mantine/core";
-import type { LoaderArgs } from "@remix-run/node";
+import type { MetaFunction, LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, useCatch, useLoaderData } from "@remix-run/react";
 import {
   IconCalendarEvent,
   IconClock,
-  IconDeviceSpeaker,
   IconHeadphones,
 } from "@tabler/icons-react";
 import React from "react";
-import { useInView } from "react-intersection-observer";
+import ErrorHandler from "~/components/errors/ErrorHandler";
+import ProgressiveImage from "~/components/ProgressiveImage";
 import useGetImagePath from "~/hooks/useGetImagePath";
 import movieService from "~/services/movie/movieService";
 import { numberFormatter } from "~/utils/formatters";
+import type { loader as rootLoader } from "~/root";
 
 interface Props {}
 
@@ -33,10 +34,17 @@ export const loader = async ({ request, params }: LoaderArgs) => {
   const { movieId = "" } = params;
 
   try {
-    const data = await movieService.getMovie(movieId || "");
-    return json(data, {
-      headers: { "Cache-Control": "public, max-age=120" },
-    });
+    return json(
+      {
+        data: await movieService.getMovie(movieId || ""),
+        similarMovies: await movieService.getSimilarMovies({
+          movie_id: movieId,
+        }),
+      },
+      {
+        headers: { "Cache-Control": "public, max-age=120" },
+      }
+    );
   } catch (e) {
     throw new Response("Not Found", {
       status: 404,
@@ -44,53 +52,37 @@ export const loader = async ({ request, params }: LoaderArgs) => {
   }
 };
 
-const MovieDetail: React.FC<Props> = (props) => {
-  const data = useLoaderData<typeof loader>();
-  const getImagePath = useGetImagePath();
+export const meta: MetaFunction<typeof loader, { root: typeof rootLoader }> = ({
+  data,
+  parentsData,
+}) => {
+  const config = parentsData?.root?.config;
+  const ogImg = `${config?.images?.base_url}/${
+    config?.images?.backdrop_sizes?.[0] || "original"
+  }/${data?.data?.backdrop_path}`;
+  return {
+    "og:image": ogImg,
+    description: data?.data?.overview,
+    title: data?.data?.title ? `${data?.data?.title} | Cinemix` : undefined,
+  };
+};
 
-  const { inView, ref } = useInView({
-    delay: 500,
-    initialInView: false,
-    fallbackInView: true,
-  });
+const MovieDetail: React.FC<Props> = (props) => {
+  const { data, similarMovies } = useLoaderData<typeof loader>();
+  const getImagePath = useGetImagePath();
 
   return (
     <Container size="lg" px={{ xs: "md" }} my="md">
       <Grid>
         <Grid.Col xs={12} sm={4} md={4}>
           <AspectRatio ratio={2 / 3} w="100%">
-            <Image
-              ref={ref}
-              withPlaceholder
-              placeholder={
-                <Box
-                  sx={{ position: "relative", width: "100%", height: "100%" }}
-                >
-                  <img
-                    src={getImagePath(data?.poster_path, "w92")}
-                    width="100%"
-                    height="100%"
-                    alt={data?.title}
-                    style={{ objectFit: "cover" }}
-                  />
-                  <Overlay blur={10} />
-                </Box>
-              }
-              src={inView ? getImagePath(data?.poster_path) : null}
+            <ProgressiveImage
+              placeholder={getImagePath(data?.poster_path, "w92")}
+              src={getImagePath(data?.poster_path)}
               width="100%"
               height="100%"
               alt={data?.title}
               fit="cover"
-              styles={{
-                figure: {
-                  width: "100%",
-                  height: "100%",
-                },
-                imageWrapper: {
-                  width: "100%",
-                  height: "100%",
-                },
-              }}
             />
           </AspectRatio>
         </Grid.Col>
@@ -189,16 +181,73 @@ const MovieDetail: React.FC<Props> = (props) => {
           </Group>
         </Grid.Col>
       </Grid>
+      <Box mt="md">
+        <Text weight={500} size="lg">
+          Similar Movies
+        </Text>
+        <SimpleGrid
+          mt="sm"
+          cols={6}
+          breakpoints={[
+            { maxWidth: "xl", cols: 6, spacing: "md" },
+            { maxWidth: "lg", cols: 5, spacing: "md" },
+            { maxWidth: "md", cols: 4, spacing: "md" },
+            { maxWidth: "sm", cols: 3, spacing: "sm" },
+            { maxWidth: "xs", cols: 2, spacing: "sm" },
+          ]}
+        >
+          {similarMovies?.results?.map((movie) => (
+            <Link
+              to={`/movie/${movie.id}`}
+              key={movie.id}
+              style={{ textDecoration: "none" }}
+            >
+              <Card
+                p={0}
+                h="100%"
+                sx={(theme) => ({
+                  "&:hover": {
+                    backgroundColor: theme.colors.dark[5],
+                    boxShadow: theme.shadows.lg,
+                  },
+                })}
+              >
+                <AspectRatio ratio={2 / 3} w="100%" key={movie.id}>
+                  <ProgressiveImage
+                    placeholder={getImagePath(movie?.poster_path, "w92")}
+                    src={getImagePath(movie?.poster_path, "w300")}
+                    width="100%"
+                    height="100%"
+                    alt={movie?.title}
+                    caption={movie?.title}
+                    fit="cover"
+                    styles={{
+                      figure: {
+                        width: "100%",
+                        height: "100%",
+                      },
+                      imageWrapper: {
+                        width: "100%",
+                        height: "100%",
+                      },
+                    }}
+                  />
+                </AspectRatio>
+                <Text size="sm" mx="xs" my="sm" align="center">
+                  {movie?.title}
+                </Text>
+              </Card>
+            </Link>
+          ))}
+        </SimpleGrid>
+      </Box>
     </Container>
   );
 };
 
 export function CatchBoundary() {
-  return (
-    <div>
-      <h2>We couldn't find that page!</h2>
-    </div>
-  );
+  const caught = useCatch();
+  return <ErrorHandler status={caught.status} />;
 }
 
 export default MovieDetail;

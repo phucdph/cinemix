@@ -30,6 +30,13 @@ export interface INowPlayingMovieRequest {
   region?: string;
 }
 
+export interface ISimilarMoviesRequest {
+  language?: string;
+  page?: number | string;
+  region?: string;
+  movie_id: string | number;
+}
+
 export interface IMovieDetail {
   adult: boolean;
   backdrop_path: string;

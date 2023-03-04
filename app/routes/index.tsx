@@ -15,10 +15,26 @@ const getParams = (searchParams: URLSearchParams) => ({
 
 export const loader = async ({ request }: LoaderArgs) => {
   const { page, tab } = getParams(new URL(request.url).searchParams);
-  const data =
-    tab === "now-playing"
-      ? await movieService.getNowPlayingMovies({ page })
-      : await movieService.getTopRatedMovies({ page });
+  let data;
+  switch (tab) {
+    case "now-playing": {
+      data = await movieService.getNowPlayingMovies({ page });
+      break;
+    }
+    case "top-rated": {
+      data = await movieService.getNowPlayingMovies({ page });
+      break;
+    }
+    case "upcoming": {
+      data = await movieService.getUpcomingMovies({ page });
+      break;
+    }
+    default: {
+      throw new Response("Not Found", {
+        status: 404,
+      });
+    }
+  }
   return json(data, {
     headers: { "Cache-Control": "public, max-age=120" },
   });
@@ -94,6 +110,10 @@ const Index = () => {
             {
               label: "Top Rated",
               value: "top-rated",
+            },
+            {
+              label: "Upcoming",
+              value: "upcoming",
             },
           ]}
           color="indigo"

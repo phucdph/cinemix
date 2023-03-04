@@ -37,8 +37,6 @@ class RestAPIClient {
         payload instanceof FormData ? payload : JSON.stringify(payload);
     }
 
-    console.log(url?.toString())
-
     const res = await fetch(url, options);
     try {
       switch (true) {

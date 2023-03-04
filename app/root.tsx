@@ -6,6 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useCatch,
 } from "@remix-run/react";
 import {
   MantineProvider,
@@ -18,6 +19,10 @@ import AppHeader from "./components/AppHeader";
 import configurationService from "./services/configuration/configurationService";
 import genreService from "./services/genre/genreService";
 import { RouterTransition } from "./components/RouteTransition";
+import NotFound from "./components/errors/NotFound";
+import InternalServerError from "./components/errors/InternalServerError";
+import { useMemo } from "react";
+import ErrorHandler from "./components/errors/ErrorHandler";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -60,6 +65,34 @@ export default function App() {
           <Scripts />
           <LiveReload />
           <RouterTransition />
+        </body>
+      </html>
+    </MantineProvider>
+  );
+}
+
+export function CatchBoundary() {
+  const caught = useCatch();
+
+  return (
+    <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      theme={{
+        colorScheme: "dark",
+      }}
+    >
+      <html lang="en">
+        <head>
+          <StylesPlaceholder />
+          <Meta />
+          <Links />
+        </head>
+        <body>
+          <AppShell padding="md" header={<AppHeader />}>
+            <ErrorHandler status={caught.status} />
+          </AppShell>
+          <ScrollRestoration />
         </body>
       </html>
     </MantineProvider>

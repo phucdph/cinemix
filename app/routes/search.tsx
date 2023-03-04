@@ -12,14 +12,17 @@ import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import {
   Link,
+  ShouldRevalidateFunction,
   useFetcher,
   useLoaderData,
   useParams,
   useSearchParams,
   useTransition,
 } from "@remix-run/react";
+import { IconSearchOff } from "@tabler/icons-react";
 import { useCallback, useRef, useState, useEffect } from "react";
 import MovieList from "~/components/MovieList";
+import ViewTypeSegment from "~/components/ViewTypeSegment";
 import searchService from "~/services/search/searchService";
 import { numberFormatter } from "~/utils/formatters";
 
@@ -36,7 +39,21 @@ export const loader = async ({ request }: LoaderArgs) => {
   });
 };
 
-const Index = () => {
+export const shouldRevalidate: ShouldRevalidateFunction = ({
+  currentParams,
+  nextParams,
+  formMethod,
+  defaultShouldRevalidate,
+  currentUrl,
+  nextUrl,
+}) => {
+  if (currentUrl.searchParams.get("q") === nextUrl.searchParams.get("q")) {
+    return false;
+  }
+  return defaultShouldRevalidate;
+};
+
+const Search = () => {
   const data = useLoaderData<typeof loader>();
 
   const [movies, setMovies] = useState(data?.results || []);
@@ -51,7 +68,7 @@ const Index = () => {
   const page = useRef(1);
 
   const isLoadingMore = fetcher.state === "loading" && page.current > 1;
-  const [params] = useSearchParams();
+  const [params, setParams] = useSearchParams();
 
   const searchText = params.get("q");
 
@@ -70,20 +87,40 @@ const Index = () => {
     }
   }, [fetcher.data]);
 
-  const transition = useTransition();
+  const viewType: "grid" | "list" = (params.get("view_type") as any) || "grid";
+
+  const setViewType = (view_type: "grid" | "list") => setParams({ view_type });
+
+  const isEmpty = !movies?.length;
 
   return (
     <Container size="lg" px={{ xs: "md" }} my="md">
-      <Text ml="md" mb="md" mt={-16}>
-        {numberFormatter(data?.total_results)} movies for: <b>{searchText}</b>
-      </Text>
-      <MovieList
-        data={movies}
-        onLoadMore={loadMore}
-        isLoadingMore={isLoadingMore}
-      />
+      {!isEmpty && (
+        <Flex mb="lg" mt={-16} align="center" justify="space-between">
+          <Text ml="md" mb="md">
+            {numberFormatter(data?.total_results)} movies for:{" "}
+            <b>{searchText}</b>
+          </Text>
+          <ViewTypeSegment value={viewType} onChange={setViewType} />
+        </Flex>
+      )}
+
+      {!isEmpty ? (
+        <MovieList
+          data={movies}
+          onLoadMore={loadMore}
+          isLoadingMore={isLoadingMore}
+        />
+      ) : (
+        <Flex pt="5rem" align="center" justify="center" direction="column">
+          <IconSearchOff size="8rem" />
+          <Text size="lg" mt="lg">
+            No result found for <b>{searchText}</b>
+          </Text>
+        </Flex>
+      )}
     </Container>
   );
 };
 
-export default Index;
+export default Search;

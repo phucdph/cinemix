@@ -17,31 +17,31 @@ import useGetImagePath from "~/hooks/useGetImagePath";
 import type { IMovie } from "~/services/movie/typings";
 import { IconCalendarEvent } from "@tabler/icons-react";
 import { Link } from "@remix-run/react";
+import ProgressiveImage from "./ProgressiveImage";
 
 interface Props {
   data: IMovie;
-  index?: number;
 }
 
 const MovieItem: React.FC<Props> = (props) => {
-  const { data, index = 0 } = props;
+  const { data } = props;
 
   const getImagePath = useGetImagePath();
 
   const { ref, inView } = useInView({
     triggerOnce: true,
-    rootMargin: "100px",
+    threshold: 0.2,
+    delay: 50,
   });
 
   const genres = useGenresById();
 
   return (
-    <>
-      <span ref={ref} />
+    <Box ref={ref} mih={300}>
       <Transition
         mounted={inView}
         transition="fade"
-        duration={200}
+        duration={500}
         timingFunction="ease"
       >
         {(style) => (
@@ -64,7 +64,6 @@ const MovieItem: React.FC<Props> = (props) => {
               })}
               style={{
                 ...style,
-                transitionDelay: (index % 20) * 30 + "ms",
               }}
             >
               <Flex direction="row">
@@ -80,25 +79,9 @@ const MovieItem: React.FC<Props> = (props) => {
                 )}
                 <Box w={200}>
                   <AspectRatio ratio={2 / 3} w={200}>
-                    <Image
-                      withPlaceholder
-                      placeholder={
-                        <Box
-                          sx={{ position: "relative", width: 200, height: 300 }}
-                        >
-                          <img
-                            src={getImagePath(data?.poster_path, "w92")}
-                            width="100%"
-                            height="100%"
-                            alt={data?.title}
-                            style={{ objectFit: "cover" }}
-                          />
-                          <Overlay blur={10} />
-                        </Box>
-                      }
-                      src={
-                        inView ? getImagePath(data?.poster_path, "w300") : null
-                      }
+                    <ProgressiveImage
+                      placeholder={getImagePath(data?.poster_path, "w92")}
+                      src={getImagePath(data?.poster_path, "w300")}
                       width={200}
                       height="100%"
                       alt={data?.title}
@@ -151,7 +134,7 @@ const MovieItem: React.FC<Props> = (props) => {
           </Link>
         )}
       </Transition>
-    </>
+    </Box>
   );
 };
 

@@ -22,7 +22,7 @@ export const loader = async ({ request }: LoaderArgs) => {
       break;
     }
     case "top-rated": {
-      data = await movieService.getNowPlayingMovies({ page });
+      data = await movieService.getTopRatedMovies({ page });
       break;
     }
     case "upcoming": {

@@ -35,6 +35,8 @@ export const loader = async () => {
   return json({ config, genres });
 };
 
+export const shouldRevalidate = () => false;
+
 export default function App() {
   return (
     <MantineProvider

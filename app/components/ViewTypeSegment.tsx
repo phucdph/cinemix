@@ -1,8 +1,11 @@
-import { Center, SegmentedControl } from "@mantine/core";
-import { IconGridDots, IconGridPattern, IconList } from "@tabler/icons-react";
+import { SegmentedControl } from "@mantine/core";
+import { IconGridDots, IconList } from "@tabler/icons-react";
 import React from "react";
 
-interface Props {}
+interface Props {
+  value: "grid" | "list";
+  onChange: (value: "grid" | "list") => void;
+}
 
 const ViewTypeSegment: React.FC<Props> = (props) => {
   return (
@@ -19,15 +22,14 @@ const ViewTypeSegment: React.FC<Props> = (props) => {
       ]}
       color="indigo"
       size="lg"
-      styles={
-        {
-          label: {
-            display: 'flex',
-            justifyContent: "center",
-            alignItems: "center",
-          }
-        }
-      }
+      styles={{
+        label: {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        },
+      }}
+      {...props}
     />
   );
 };

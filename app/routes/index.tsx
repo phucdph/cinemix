@@ -1,28 +1,10 @@
-import {
-  Box,
-  Card,
-  Container,
-  Flex,
-  Grid,
-  Image,
-  SegmentedControl,
-  Text,
-} from "@mantine/core";
+import { Container, Flex, SegmentedControl } from "@mantine/core";
 import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import {
-  Link,
-  useFetcher,
-  useLoaderData,
-  useSearchParams,
-  useTransition,
-} from "@remix-run/react";
-import useGetImagePath from "~/hooks/useGetImagePath";
+import type { ShouldRevalidateFunction } from "@remix-run/react";
+import { useFetcher, useLoaderData, useSearchParams } from "@remix-run/react";
 import movieService from "~/services/movie/movieService";
 import { useCallback, useRef, useState, useEffect } from "react";
-import { InView } from "react-intersection-observer";
-import MovieItem from "~/components/MovieItem";
-import MovieItemPlaceholder from "~/components/MovieItemPlaceholder";
 import MovieList from "~/components/MovieList";
 import ViewTypeSegment from "~/components/ViewTypeSegment";
 
@@ -40,6 +22,20 @@ export const loader = async ({ request }: LoaderArgs) => {
   return json(data, {
     headers: { "Cache-Control": "public, max-age=120" },
   });
+};
+
+export const shouldRevalidate: ShouldRevalidateFunction = ({
+  currentParams,
+  nextParams,
+  formMethod,
+  defaultShouldRevalidate,
+  currentUrl,
+  nextUrl,
+}) => {
+  if (currentUrl.searchParams.get("tab") === nextUrl.searchParams.get("tab")) {
+    return false;
+  }
+  return defaultShouldRevalidate;
 };
 
 const Index = () => {
@@ -77,7 +73,12 @@ const Index = () => {
 
   const tab = params.get("tab") || "now-playing";
 
-  const setTab = (t: string) => setParams({ tab: t });
+  const viewType: "grid" | "list" = (params.get("view_type") as any) || "grid";
+
+  const setTab = (t: string) => setParams({ tab: t, view_type: viewType });
+
+  const setViewType = (view_type: "grid" | "list") =>
+    setParams({ view_type, tab });
 
   return (
     <Container size="lg" px={{ xs: "md" }} my="md">
@@ -97,12 +98,13 @@ const Index = () => {
           ]}
           color="indigo"
         />
-        <ViewTypeSegment/>
+        <ViewTypeSegment value={viewType} onChange={setViewType} />
       </Flex>
       <MovieList
         data={movies}
         onLoadMore={loadMore}
         isLoadingMore={isLoadingMore}
+        viewType={viewType}
       />
     </Container>
   );

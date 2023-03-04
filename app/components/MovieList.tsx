@@ -1,4 +1,4 @@
-import { Grid } from "@mantine/core";
+import { Grid, Stack } from "@mantine/core";
 import { useTransition } from "@remix-run/react";
 import React from "react";
 import { InView } from "react-intersection-observer";
@@ -21,36 +21,62 @@ const MovieList: React.FC<Props> = (props) => {
 
   const isTransitioning = transition.state === "loading";
 
-  return (
-    <>
-      <Grid gutter="md" mih="100vh">
-        {movies?.map((item, index) => (
-          <Grid.Col key={item.id} xs={12} sm={6} md={6} lg={6}>
-            <MovieItem data={item} index={index} />
-          </Grid.Col>
-        ))}
-        {isLoadingMore && (
-          <>
-            <Grid.Col xs={12} sm={6} md={6} lg={6}>
-              <MovieItemPlaceholder />
+  if (viewType === "grid")
+    return (
+      <>
+        <Grid gutter="md" mih="150vh">
+          {movies?.map((item, index) => (
+            <Grid.Col key={item.id} xs={12} sm={6} md={6} lg={6}>
+              <MovieItem data={item} index={index} />
             </Grid.Col>
-            <Grid.Col xs={12} sm={6} md={6} lg={6}>
-              <MovieItemPlaceholder />
-            </Grid.Col>
-          </>
+          ))}
+          {isLoadingMore && !isTransitioning && (
+            <>
+              <Grid.Col xs={12} sm={6} md={6} lg={6}>
+                <MovieItemPlaceholder />
+              </Grid.Col>
+              <Grid.Col xs={12} sm={6} md={6} lg={6}>
+                <MovieItemPlaceholder />
+              </Grid.Col>
+            </>
+          )}
+        </Grid>
+        {!!movies?.length && !isLoadingMore && !isTransitioning && (
+          <InView
+            as="div"
+            initialInView={false}
+            onChange={(inView) => {
+              if (inView) onLoadMore?.();
+            }}
+          />
         )}
-      </Grid>
-      {!!movies?.length && !isLoadingMore && !isTransitioning && (
-        <InView
-          as="div"
-          initialInView={false}
-          onChange={(inView) => {
-            if (inView) onLoadMore?.();
-          }}
-        />
-      )}
-    </>
-  );
+      </>
+    );
+  else {
+    return (
+      <>
+        <Stack spacing="xs" mih="150vh">
+          {movies?.map((item, index) => (
+            <MovieItem key={item.id} data={item} index={index} />
+          ))}
+          {isLoadingMore && !isTransitioning && (
+            <>
+              <MovieItemPlaceholder />
+            </>
+          )}
+        </Stack>
+        {!!movies?.length && !isLoadingMore && !isTransitioning && (
+          <InView
+            as="div"
+            initialInView={false}
+            onChange={(inView) => {
+              if (inView) onLoadMore?.();
+            }}
+          />
+        )}
+      </>
+    );
+  }
 };
 
 export default MovieList;

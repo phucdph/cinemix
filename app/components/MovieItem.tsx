@@ -41,7 +41,7 @@ const MovieItem: React.FC<Props> = (props) => {
       <Transition
         mounted={inView}
         transition="fade"
-        duration={300}
+        duration={200}
         timingFunction="ease"
       >
         {(style) => (
@@ -64,7 +64,7 @@ const MovieItem: React.FC<Props> = (props) => {
               })}
               style={{
                 ...style,
-                transitionDelay: (index % 20) * 50 + "ms",
+                transitionDelay: (index % 20) * 30 + "ms",
               }}
             >
               <Flex direction="row">

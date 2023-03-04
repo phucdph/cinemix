@@ -37,7 +37,7 @@ const MovieItem: React.FC<Props> = (props) => {
   const genres = useGenresById();
 
   return (
-    <Box ref={ref} mih={300}>
+    <Box ref={ref}>
       <Transition
         mounted={inView}
         transition="fade"
@@ -77,12 +77,24 @@ const MovieItem: React.FC<Props> = (props) => {
                     18+
                   </Badge>
                 )}
-                <Box w={200}>
-                  <AspectRatio ratio={2 / 3} w={200}>
+                <Box
+                  w={{ base: 120, xs: 140, sm: 200, md: 200, lg: 200, xl: 200 }}
+                >
+                  <AspectRatio
+                    ratio={2 / 3}
+                    w={{
+                      base: 120,
+                      xs: 140,
+                      sm: 200,
+                      md: 200,
+                      lg: 200,
+                      xl: 200,
+                    }}
+                  >
                     <ProgressiveImage
                       placeholder={getImagePath(data?.poster_path, "w92")}
                       src={getImagePath(data?.poster_path, "w300")}
-                      width={200}
+                      width={"100%"}
                       height="100%"
                       alt={data?.title}
                       fit="cover"
@@ -124,7 +136,32 @@ const MovieItem: React.FC<Props> = (props) => {
                     title={data?.overview}
                     color="dimmed"
                     size="sm"
+                    lineClamp={2}
+                    sx={(theme) => ({
+                      [theme.fn.smallerThan("sm")]: {
+                        display: "-webkit-box",
+                      },
+                      [theme.fn.largerThan("sm")]: {
+                        display: "none",
+                      },
+                    })}
+                  >
+                    {data?.overview}
+                  </Text>
+                  <Text
+                    mt={4}
+                    title={data?.overview}
+                    color="dimmed"
+                    size="sm"
                     lineClamp={4}
+                    sx={(theme) => ({
+                      [theme.fn.largerThan("sm")]: {
+                        display: "-webkit-box",
+                      },
+                      [theme.fn.smallerThan("sm")]: {
+                        display: "none",
+                      },
+                    })}
                   >
                     {data?.overview}
                   </Text>

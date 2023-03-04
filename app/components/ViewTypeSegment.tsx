@@ -21,13 +21,21 @@ const ViewTypeSegment: React.FC<Props> = (props) => {
         },
       ]}
       color="indigo"
-      size="lg"
+      size="md"
       styles={{
         label: {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         },
+      }}
+      display={{
+        base: "none",
+        xs: "none",
+        sm: "none",
+        md: "flex",
+        lg: "flex",
+        xl: "flex",
       }}
       {...props}
     />

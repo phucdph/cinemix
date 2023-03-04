@@ -98,7 +98,7 @@ const Index = () => {
 
   return (
     <Container size="lg" px={{ xs: "md" }} my="md">
-      <Flex mb="lg" mt={-16} align="center" justify="space-between">
+      <Flex mb="lg" mt={-16} align="center" justify="space-between" wrap="wrap">
         <SegmentedControl
           onChange={setTab}
           value={tab}
@@ -117,6 +117,14 @@ const Index = () => {
             },
           ]}
           color="indigo"
+          w={{
+            base: "100%",
+            xs: "auto",
+            sm: "auto",
+            md: "auto",
+            lg: "auto",
+            xl: "auto",
+          }}
         />
         <ViewTypeSegment value={viewType} onChange={setViewType} />
       </Flex>

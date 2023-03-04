@@ -72,67 +72,66 @@ var import_core = require("@mantine/core"), import_react2 = require("@remix-run/
       children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_core.Flex, { w: "100%", align: "center", justify: "space-between", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/", style: { textDecoration: "none" }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_core.Text, { weight: 800, size: "xl", color: "indigo", children: "CINEMIX" }, void 0, !1, {
           fileName: "app/components/AppHeader.tsx",
-          lineNumber: 21,
+          lineNumber: 29,
           columnNumber: 13
         }, this) }, void 0, !1, {
           fileName: "app/components/AppHeader.tsx",
-          lineNumber: 20,
+          lineNumber: 28,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("form", { method: "get", action: "/search", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_core.Flex, { children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-            import_core.Input,
-            {
-              name: "q",
-              size: "sm",
-              placeholder: "Search",
-              variant: "filled",
-              disabled: isSearching
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/components/AppHeader.tsx",
-              lineNumber: 27,
-              columnNumber: 15
-            },
-            this
-          ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
-            import_core.Button,
-            {
-              size: "sm",
-              color: "indigo",
-              type: "submit",
-              disabled: isSearching,
-              loading: isSearching,
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_icons_react.IconSearch, { size: "1.2rem" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("form", { method: "get", action: "/search", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_core.Flex, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+          import_core.Input,
+          {
+            name: "q",
+            size: "sm",
+            placeholder: "Search",
+            variant: "filled",
+            disabled: isSearching,
+            rightSection: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+              import_core.ActionIcon,
+              {
+                color: "indigo",
+                type: "submit",
+                disabled: isSearching,
+                loading: isSearching,
+                variant: "filled",
+                size: "lg",
+                children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_icons_react.IconSearch, { size: "1.2rem" }, void 0, !1, {
+                  fileName: "app/components/AppHeader.tsx",
+                  lineNumber: 50,
+                  columnNumber: 21
+                }, this)
+              },
+              void 0,
+              !1,
+              {
                 fileName: "app/components/AppHeader.tsx",
-                lineNumber: 41,
-                columnNumber: 17
-              }, this)
-            },
-            void 0,
-            !1,
-            {
-              fileName: "app/components/AppHeader.tsx",
-              lineNumber: 34,
-              columnNumber: 15
-            },
-            this
-          )
-        ] }, void 0, !0, {
+                lineNumber: 42,
+                columnNumber: 19
+              },
+              this
+            )
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/components/AppHeader.tsx",
+            lineNumber: 35,
+            columnNumber: 15
+          },
+          this
+        ) }, void 0, !1, {
           fileName: "app/components/AppHeader.tsx",
-          lineNumber: 26,
+          lineNumber: 34,
           columnNumber: 13
         }, this) }, void 0, !1, {
           fileName: "app/components/AppHeader.tsx",
-          lineNumber: 25,
+          lineNumber: 33,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/AppHeader.tsx",
-        lineNumber: 19,
+        lineNumber: 27,
         columnNumber: 9
       }, this)
     },
@@ -140,13 +139,13 @@ var import_core = require("@mantine/core"), import_react2 = require("@remix-run/
     !1,
     {
       fileName: "app/components/AppHeader.tsx",
-      lineNumber: 12,
+      lineNumber: 20,
       columnNumber: 7
     },
     this
   ) }, void 0, !1, {
     fileName: "app/components/AppHeader.tsx",
-    lineNumber: 11,
+    lineNumber: 19,
     columnNumber: 5
   }, this);
 }, AppHeader_default = AppHeader;
@@ -594,7 +593,7 @@ __export(movieId_exports, {
   loader: () => loader2,
   meta: () => meta2
 });
-var import_core5 = require("@mantine/core"), import_node2 = require("@remix-run/node"), import_react11 = require("@remix-run/react"), import_icons_react2 = require("@tabler/icons-react");
+var import_core6 = require("@mantine/core"), import_node2 = require("@remix-run/node"), import_react12 = require("@remix-run/react"), import_icons_react2 = require("@tabler/icons-react");
 
 // app/components/ProgressiveImage.tsx
 var import_react8 = require("react"), import_core4 = require("@mantine/core"), import_react_intersection_observer = require("react-intersection-observer");
@@ -701,8 +700,127 @@ var numberFormatter = (num, opts = { maximumFractionDigits: 12 }) => {
   return isNaN(number) ? "N/A" : num != null ? number.toLocaleString("en-US", opts) : "N/A";
 };
 
+// app/components/SimilarMovies/SimilarMovies.tsx
+var import_core5 = require("@mantine/core"), import_react11 = require("@remix-run/react");
+var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), SimilarMovies = (props) => {
+  let { data, ...rest } = props, getImagePath = useGetImagePath_default();
+  return data != null && data.length ? /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Box, { ...rest, children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { weight: 500, size: "lg", children: "Similar Movies" }, void 0, !1, {
+      fileName: "app/components/SimilarMovies/SimilarMovies.tsx",
+      lineNumber: 19,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
+      import_core5.SimpleGrid,
+      {
+        mt: "sm",
+        cols: 6,
+        breakpoints: [
+          { maxWidth: "xl", cols: 6, spacing: "md" },
+          { maxWidth: "lg", cols: 5, spacing: "md" },
+          { maxWidth: "md", cols: 4, spacing: "md" },
+          { maxWidth: "sm", cols: 3, spacing: "sm" },
+          { maxWidth: "xs", cols: 2, spacing: "sm" }
+        ],
+        children: data == null ? void 0 : data.map((movie) => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
+          import_react11.Link,
+          {
+            to: `/movie/${movie.id}`,
+            style: { textDecoration: "none" },
+            children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
+              import_core5.Card,
+              {
+                p: 0,
+                h: "100%",
+                sx: (theme) => ({
+                  "&:hover": {
+                    backgroundColor: theme.colors.dark[5],
+                    boxShadow: theme.shadows.lg
+                  }
+                }),
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.AspectRatio, { ratio: 2 / 3, w: "100%", children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
+                    ProgressiveImage_default,
+                    {
+                      placeholder: getImagePath(movie == null ? void 0 : movie.poster_path, "w92"),
+                      src: getImagePath(movie == null ? void 0 : movie.poster_path, "w300"),
+                      width: "100%",
+                      height: "100%",
+                      alt: movie == null ? void 0 : movie.title,
+                      caption: movie == null ? void 0 : movie.title,
+                      fit: "cover",
+                      styles: {
+                        figure: {
+                          width: "100%",
+                          height: "100%"
+                        },
+                        imageWrapper: {
+                          width: "100%",
+                          height: "100%"
+                        }
+                      }
+                    },
+                    void 0,
+                    !1,
+                    {
+                      fileName: "app/components/SimilarMovies/SimilarMovies.tsx",
+                      lineNumber: 50,
+                      columnNumber: 17
+                    },
+                    this
+                  ) }, movie.id, !1, {
+                    fileName: "app/components/SimilarMovies/SimilarMovies.tsx",
+                    lineNumber: 49,
+                    columnNumber: 15
+                  }, this),
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { size: "sm", mx: "xs", my: "sm", align: "center", children: movie == null ? void 0 : movie.title }, void 0, !1, {
+                    fileName: "app/components/SimilarMovies/SimilarMovies.tsx",
+                    lineNumber: 70,
+                    columnNumber: 15
+                  }, this)
+                ]
+              },
+              void 0,
+              !0,
+              {
+                fileName: "app/components/SimilarMovies/SimilarMovies.tsx",
+                lineNumber: 39,
+                columnNumber: 13
+              },
+              this
+            )
+          },
+          movie.id,
+          !1,
+          {
+            fileName: "app/components/SimilarMovies/SimilarMovies.tsx",
+            lineNumber: 34,
+            columnNumber: 11
+          },
+          this
+        ))
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/SimilarMovies/SimilarMovies.tsx",
+        lineNumber: 22,
+        columnNumber: 7
+      },
+      this
+    )
+  ] }, void 0, !0, {
+    fileName: "app/components/SimilarMovies/SimilarMovies.tsx",
+    lineNumber: 18,
+    columnNumber: 5
+  }, this) : null;
+}, SimilarMovies_default = SimilarMovies;
+
+// app/components/SimilarMovies/index.ts
+var SimilarMovies_default2 = SimilarMovies_default;
+
 // app/routes/movie/$movieId.tsx
-var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async ({ request, params }) => {
+var import_jsx_dev_runtime11 = require("react/jsx-dev-runtime"), loader2 = async ({ request, params }) => {
   let { movieId = "" } = params;
   try {
     return (0, import_node2.json)(
@@ -733,11 +851,11 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
     title: (_h = data == null ? void 0 : data.data) != null && _h.title ? `${(_i = data == null ? void 0 : data.data) == null ? void 0 : _i.title} | Cinemix` : void 0
   };
 }, MovieDetail = (props) => {
-  var _a, _b, _c, _d, _e;
-  let { data, similarMovies } = (0, import_react11.useLoaderData)(), getImagePath = useGetImagePath_default();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Container, { size: "lg", px: { xs: "md" }, my: "md", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Grid, { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Grid.Col, { xs: 12, sm: 4, md: 4, children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.AspectRatio, { ratio: 2 / 3, w: "100%", children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
+  var _a, _b, _c, _d;
+  let { data, similarMovies } = (0, import_react12.useLoaderData)(), getImagePath = useGetImagePath_default();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Container, { size: "lg", px: { xs: "md" }, my: "md", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Grid, { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Grid.Col, { xs: 12, sm: 4, md: 4, children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.AspectRatio, { ratio: 2 / 3, w: "100%", children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
         ProgressiveImage_default,
         {
           placeholder: getImagePath(data == null ? void 0 : data.poster_path, "w92"),
@@ -751,54 +869,54 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
         !1,
         {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 81,
+          lineNumber: 82,
           columnNumber: 13
         },
         this
       ) }, void 0, !1, {
         fileName: "app/routes/movie/$movieId.tsx",
-        lineNumber: 80,
+        lineNumber: 81,
         columnNumber: 11
       }, this) }, void 0, !1, {
         fileName: "app/routes/movie/$movieId.tsx",
-        lineNumber: 79,
+        lineNumber: 80,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Grid.Col, { xs: 12, sm: 8, md: 8, children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { weight: 500, size: "xl", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Grid.Col, { xs: 12, sm: 8, md: 8, children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Text, { weight: 500, size: "xl", children: [
           data == null ? void 0 : data.title,
-          (data == null ? void 0 : data.status) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Badge, { variant: "filled", size: "md", color: "teal", mb: 6, ml: 6, children: data.status }, void 0, !1, {
+          (data == null ? void 0 : data.status) && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Badge, { variant: "filled", size: "md", color: "teal", mb: 6, ml: 6, children: data.status }, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 95,
+            lineNumber: 96,
             columnNumber: 15
           }, this),
-          (data == null ? void 0 : data.adult) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Badge, { variant: "filled", size: "xs", color: "red", mb: 6, ml: 6, children: "18+" }, void 0, !1, {
+          (data == null ? void 0 : data.adult) && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Badge, { variant: "filled", size: "xs", color: "red", mb: 6, ml: 6, children: "18+" }, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 100,
+            lineNumber: 101,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 92,
+          lineNumber: 93,
           columnNumber: 11
         }, this),
-        (data == null ? void 0 : data.original_title) !== (data == null ? void 0 : data.title) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { weight: 500, size: "md", color: "dimmed", children: data == null ? void 0 : data.original_title }, void 0, !1, {
+        (data == null ? void 0 : data.original_title) !== (data == null ? void 0 : data.title) && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Text, { weight: 500, size: "md", color: "dimmed", children: data == null ? void 0 : data.original_title }, void 0, !1, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 107,
+          lineNumber: 108,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { size: "xs", italic: !0, color: "dimmed", children: data == null ? void 0 : data.tagline }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Text, { size: "xs", italic: !0, color: "dimmed", children: data == null ? void 0 : data.tagline }, void 0, !1, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 111,
+          lineNumber: 112,
           columnNumber: 11
         }, this),
-        !!((_a = data == null ? void 0 : data.production_companies) != null && _a.length) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { size: "sm", mt: 4, children: (_b = data == null ? void 0 : data.production_companies) == null ? void 0 : _b.map((c) => c.name).join(", ") }, void 0, !1, {
+        !!((_a = data == null ? void 0 : data.production_companies) != null && _a.length) && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Text, { size: "sm", mt: 4, children: (_b = data == null ? void 0 : data.production_companies) == null ? void 0 : _b.map((c) => c.name).join(", ") }, void 0, !1, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 115,
+          lineNumber: 116,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
-          import_core5.Rating,
+        /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
+          import_core6.Rating,
           {
             mt: 4,
             mb: 6,
@@ -810,101 +928,101 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
           !1,
           {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 120,
+            lineNumber: 121,
             columnNumber: 11
           },
           this
         ),
-        (_c = data == null ? void 0 : data.genres) == null ? void 0 : _c.map((genre) => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Badge, { mr: 4, mb: 4, mt: 4, size: "sm", color: "indigo", children: genre == null ? void 0 : genre.name }, genre.id, !1, {
+        (_c = data == null ? void 0 : data.genres) == null ? void 0 : _c.map((genre) => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Badge, { mr: 4, mb: 4, mt: 4, size: "sm", color: "indigo", children: genre == null ? void 0 : genre.name }, genre.id, !1, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 128,
+          lineNumber: 129,
           columnNumber: 13
         }, this)),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Flex, { direction: "row", align: "center", color: "dimmed", mt: 4, children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_icons_react2.IconCalendarEvent, {}, void 0, !1, {
-            fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 133,
-            columnNumber: 13
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { ml: 4, size: "sm", component: "span", children: data == null ? void 0 : data.release_date }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Flex, { direction: "row", align: "center", color: "dimmed", mt: 4, children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_icons_react2.IconCalendarEvent, {}, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
             lineNumber: 134,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Text, { ml: 4, size: "sm", component: "span", children: data == null ? void 0 : data.release_date }, void 0, !1, {
+            fileName: "app/routes/movie/$movieId.tsx",
+            lineNumber: 135,
             columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 132,
+          lineNumber: 133,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Flex, { direction: "row", align: "center", color: "dimmed", mt: 6, children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_icons_react2.IconClock, {}, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Flex, { direction: "row", align: "center", color: "dimmed", mt: 6, children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_icons_react2.IconClock, {}, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 139,
+            lineNumber: 140,
             columnNumber: 13
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { ml: 4, size: "sm", component: "span", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Text, { ml: 4, size: "sm", component: "span", children: [
             data == null ? void 0 : data.runtime,
             " mins"
           ] }, void 0, !0, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 140,
+            lineNumber: 141,
             columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 138,
+          lineNumber: 139,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Flex, { direction: "row", align: "center", color: "dimmed", mt: 6, children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_icons_react2.IconHeadphones, {}, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Flex, { direction: "row", align: "center", color: "dimmed", mt: 6, children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_icons_react2.IconHeadphones, {}, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 145,
+            lineNumber: 146,
             columnNumber: 13
           }, this),
-          (_d = data == null ? void 0 : data.spoken_languages) == null ? void 0 : _d.map((lng) => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Badge, { mr: 6, size: "sm", children: lng.english_name }, lng.iso_639_1, !1, {
+          (_d = data == null ? void 0 : data.spoken_languages) == null ? void 0 : _d.map((lng) => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Badge, { mr: 6, size: "sm", children: lng.english_name }, lng.iso_639_1, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 147,
+            lineNumber: 148,
             columnNumber: 15
           }, this))
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 144,
+          lineNumber: 145,
           columnNumber: 11
         }, this),
-        !!(data != null && data.budget) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { mt: 4, size: "sm", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("b", { children: "Production Budget" }, void 0, !1, {
+        !!(data != null && data.budget) && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Text, { mt: 4, size: "sm", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("b", { children: "Production Budget" }, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 154,
+            lineNumber: 155,
             columnNumber: 15
           }, this),
           ": $",
           numberFormatter(data == null ? void 0 : data.budget)
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 153,
+          lineNumber: 154,
           columnNumber: 13
         }, this),
-        !!(data != null && data.revenue) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { mt: 4, size: "sm", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("b", { children: "Revenue" }, void 0, !1, {
+        !!(data != null && data.revenue) && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Text, { mt: 4, size: "sm", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("b", { children: "Revenue" }, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 159,
+            lineNumber: 160,
             columnNumber: 15
           }, this),
           ": $",
           numberFormatter(data == null ? void 0 : data.revenue)
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 158,
+          lineNumber: 159,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { mt: 4, title: data == null ? void 0 : data.overview, color: "dimmed", size: "sm", children: data == null ? void 0 : data.overview }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Text, { mt: 4, title: data == null ? void 0 : data.overview, color: "dimmed", size: "sm", children: data == null ? void 0 : data.overview }, void 0, !1, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 162,
+          lineNumber: 163,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Group, { mt: "sm", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
-            import_core5.Button,
+        /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Group, { mt: "sm", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
+            import_core6.Button,
             {
               component: "a",
               href: `https://www.imdb.com/title/${data == null ? void 0 : data.imdb_id}`,
@@ -917,13 +1035,13 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
             !1,
             {
               fileName: "app/routes/movie/$movieId.tsx",
-              lineNumber: 166,
+              lineNumber: 167,
               columnNumber: 13
             },
             this
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
-            import_core5.Button,
+          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
+            import_core6.Button,
             {
               component: "a",
               href: data == null ? void 0 : data.homepage,
@@ -935,147 +1053,42 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
             !1,
             {
               fileName: "app/routes/movie/$movieId.tsx",
-              lineNumber: 175,
+              lineNumber: 176,
               columnNumber: 13
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 165,
+          lineNumber: 166,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/movie/$movieId.tsx",
-        lineNumber: 91,
+        lineNumber: 92,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/movie/$movieId.tsx",
-      lineNumber: 78,
+      lineNumber: 79,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Box, { mt: "md", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { weight: 500, size: "lg", children: "Similar Movies" }, void 0, !1, {
-        fileName: "app/routes/movie/$movieId.tsx",
-        lineNumber: 187,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
-        import_core5.SimpleGrid,
-        {
-          mt: "sm",
-          cols: 6,
-          breakpoints: [
-            { maxWidth: "xl", cols: 6, spacing: "md" },
-            { maxWidth: "lg", cols: 5, spacing: "md" },
-            { maxWidth: "md", cols: 4, spacing: "md" },
-            { maxWidth: "sm", cols: 3, spacing: "sm" },
-            { maxWidth: "xs", cols: 2, spacing: "sm" }
-          ],
-          children: (_e = similarMovies == null ? void 0 : similarMovies.results) == null ? void 0 : _e.map((movie) => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
-            import_react11.Link,
-            {
-              to: `/movie/${movie.id}`,
-              style: { textDecoration: "none" },
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
-                import_core5.Card,
-                {
-                  p: 0,
-                  h: "100%",
-                  sx: (theme) => ({
-                    "&:hover": {
-                      backgroundColor: theme.colors.dark[5],
-                      boxShadow: theme.shadows.lg
-                    }
-                  }),
-                  children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.AspectRatio, { ratio: 2 / 3, w: "100%", children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
-                      ProgressiveImage_default,
-                      {
-                        placeholder: getImagePath(movie == null ? void 0 : movie.poster_path, "w92"),
-                        src: getImagePath(movie == null ? void 0 : movie.poster_path, "w300"),
-                        width: "100%",
-                        height: "100%",
-                        alt: movie == null ? void 0 : movie.title,
-                        caption: movie == null ? void 0 : movie.title,
-                        fit: "cover",
-                        styles: {
-                          figure: {
-                            width: "100%",
-                            height: "100%"
-                          },
-                          imageWrapper: {
-                            width: "100%",
-                            height: "100%"
-                          }
-                        }
-                      },
-                      void 0,
-                      !1,
-                      {
-                        fileName: "app/routes/movie/$movieId.tsx",
-                        lineNumber: 218,
-                        columnNumber: 19
-                      },
-                      this
-                    ) }, movie.id, !1, {
-                      fileName: "app/routes/movie/$movieId.tsx",
-                      lineNumber: 217,
-                      columnNumber: 17
-                    }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { size: "sm", mx: "xs", my: "sm", align: "center", children: movie == null ? void 0 : movie.title }, void 0, !1, {
-                      fileName: "app/routes/movie/$movieId.tsx",
-                      lineNumber: 238,
-                      columnNumber: 17
-                    }, this)
-                  ]
-                },
-                void 0,
-                !0,
-                {
-                  fileName: "app/routes/movie/$movieId.tsx",
-                  lineNumber: 207,
-                  columnNumber: 15
-                },
-                this
-              )
-            },
-            movie.id,
-            !1,
-            {
-              fileName: "app/routes/movie/$movieId.tsx",
-              lineNumber: 202,
-              columnNumber: 13
-            },
-            this
-          ))
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 190,
-          columnNumber: 9
-        },
-        this
-      )
-    ] }, void 0, !0, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(SimilarMovies_default2, { mt: "md", data: similarMovies == null ? void 0 : similarMovies.results }, void 0, !1, {
       fileName: "app/routes/movie/$movieId.tsx",
-      lineNumber: 186,
+      lineNumber: 187,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/movie/$movieId.tsx",
-    lineNumber: 77,
+    lineNumber: 78,
     columnNumber: 5
   }, this);
 };
 function CatchBoundary2() {
-  let caught = (0, import_react11.useCatch)();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(ErrorHandler_default, { status: caught.status }, void 0, !1, {
+  let caught = (0, import_react12.useCatch)();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(ErrorHandler_default, { status: caught.status }, void 0, !1, {
     fileName: "app/routes/movie/$movieId.tsx",
-    lineNumber: 252,
+    lineNumber: 194,
     columnNumber: 10
   }, this);
 }
@@ -1088,34 +1101,34 @@ __export(search_exports, {
   loader: () => loader3,
   shouldRevalidate: () => shouldRevalidate2
 });
-var import_core10 = require("@mantine/core"), import_node3 = require("@remix-run/node"), import_react17 = require("@remix-run/react"), import_icons_react5 = require("@tabler/icons-react"), import_react18 = require("react");
+var import_core11 = require("@mantine/core"), import_node3 = require("@remix-run/node"), import_node4 = require("@remix-run/node"), import_react18 = require("@remix-run/react"), import_icons_react5 = require("@tabler/icons-react"), import_react19 = require("react");
 
 // app/components/MovieList.tsx
-var import_core8 = require("@mantine/core"), import_react16 = require("@remix-run/react"), import_react_intersection_observer3 = require("react-intersection-observer");
+var import_core9 = require("@mantine/core"), import_react17 = require("@remix-run/react"), import_react_intersection_observer3 = require("react-intersection-observer");
 
 // app/components/MovieItem.tsx
-var import_core6 = require("@mantine/core"), import_react13 = __toESM(require("react")), import_react_intersection_observer2 = require("react-intersection-observer");
+var import_core7 = require("@mantine/core"), import_react14 = __toESM(require("react")), import_react_intersection_observer2 = require("react-intersection-observer");
 
 // app/hooks/useGenres.ts
-var import_react12 = require("react");
+var import_react13 = require("react");
 var import_keyBy = __toESM(require("lodash/keyBy")), useGenres = () => {
   var _a;
   return ((_a = useRootData_default()) == null ? void 0 : _a.genres) || [];
 }, useGenresById = () => {
   let genres = useGenres();
-  return (0, import_react12.useMemo)(() => (0, import_keyBy.default)(genres, "id"), [genres]);
+  return (0, import_react13.useMemo)(() => (0, import_keyBy.default)(genres, "id"), [genres]);
 };
 
 // app/components/MovieItem.tsx
-var import_icons_react3 = require("@tabler/icons-react"), import_react14 = require("@remix-run/react");
-var import_jsx_dev_runtime11 = require("react/jsx-dev-runtime"), MovieItem = (props) => {
+var import_icons_react3 = require("@tabler/icons-react"), import_react15 = require("@remix-run/react");
+var import_jsx_dev_runtime12 = require("react/jsx-dev-runtime"), MovieItem = (props) => {
   let { data } = props, getImagePath = useGetImagePath_default(), { ref, inView } = (0, import_react_intersection_observer2.useInView)({
     triggerOnce: !0,
     threshold: 0.2,
     delay: 50
   }), genres = useGenresById();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Box, { ref, mih: 300, children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
-    import_core6.Transition,
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Box, { ref, children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+    import_core7.Transition,
     {
       mounted: inView,
       transition: "fade",
@@ -1123,14 +1136,14 @@ var import_jsx_dev_runtime11 = require("react/jsx-dev-runtime"), MovieItem = (pr
       timingFunction: "ease",
       children: (style) => {
         var _a;
-        return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
-          import_react14.Link,
+        return /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+          import_react15.Link,
           {
             to: `/movie/${data.id}`,
             style: { textDecoration: "none" },
             prefetch: "intent",
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
-              import_core6.Card,
+            children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+              import_core7.Card,
               {
                 shadow: "sm",
                 radius: "md",
@@ -1146,9 +1159,9 @@ var import_jsx_dev_runtime11 = require("react/jsx-dev-runtime"), MovieItem = (pr
                 style: {
                   ...style
                 },
-                children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Flex, { direction: "row", children: [
-                  !!(data != null && data.adult) && /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
-                    import_core6.Badge,
+                children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Flex, { direction: "row", children: [
+                  !!(data != null && data.adult) && /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                    import_core7.Badge,
                     {
                       variant: "filled",
                       size: "xs",
@@ -1165,49 +1178,77 @@ var import_jsx_dev_runtime11 = require("react/jsx-dev-runtime"), MovieItem = (pr
                     },
                     this
                   ),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Box, { w: 200, children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.AspectRatio, { ratio: 2 / 3, w: 200, children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
-                    ProgressiveImage_default,
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                    import_core7.Box,
                     {
-                      placeholder: getImagePath(data == null ? void 0 : data.poster_path, "w92"),
-                      src: getImagePath(data == null ? void 0 : data.poster_path, "w300"),
-                      width: 200,
-                      height: "100%",
-                      alt: data == null ? void 0 : data.title,
-                      fit: "cover"
+                      w: { base: 120, xs: 140, sm: 200, md: 200, lg: 200, xl: 200 },
+                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                        import_core7.AspectRatio,
+                        {
+                          ratio: 2 / 3,
+                          w: {
+                            base: 120,
+                            xs: 140,
+                            sm: 200,
+                            md: 200,
+                            lg: 200,
+                            xl: 200
+                          },
+                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                            ProgressiveImage_default,
+                            {
+                              placeholder: getImagePath(data == null ? void 0 : data.poster_path, "w92"),
+                              src: getImagePath(data == null ? void 0 : data.poster_path, "w300"),
+                              width: "100%",
+                              height: "100%",
+                              alt: data == null ? void 0 : data.title,
+                              fit: "cover"
+                            },
+                            void 0,
+                            !1,
+                            {
+                              fileName: "app/components/MovieItem.tsx",
+                              lineNumber: 94,
+                              columnNumber: 21
+                            },
+                            this
+                          )
+                        },
+                        void 0,
+                        !1,
+                        {
+                          fileName: "app/components/MovieItem.tsx",
+                          lineNumber: 83,
+                          columnNumber: 19
+                        },
+                        this
+                      )
                     },
                     void 0,
                     !1,
                     {
                       fileName: "app/components/MovieItem.tsx",
-                      lineNumber: 82,
-                      columnNumber: 21
+                      lineNumber: 80,
+                      columnNumber: 17
                     },
                     this
-                  ) }, void 0, !1, {
-                    fileName: "app/components/MovieItem.tsx",
-                    lineNumber: 81,
-                    columnNumber: 19
-                  }, this) }, void 0, !1, {
-                    fileName: "app/components/MovieItem.tsx",
-                    lineNumber: 80,
-                    columnNumber: 17
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Box, { ml: "md", mr: "md", mt: "sm", children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Text, { weight: 500, size: "lg", mr: 36, children: data == null ? void 0 : data.title }, void 0, !1, {
+                  ),
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Box, { ml: "md", mr: "md", mt: "sm", children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Text, { weight: 500, size: "lg", mr: 36, children: data == null ? void 0 : data.title }, void 0, !1, {
                       fileName: "app/components/MovieItem.tsx",
-                      lineNumber: 94,
+                      lineNumber: 106,
                       columnNumber: 19
                     }, this),
                     (_a = data == null ? void 0 : data.genre_ids) == null ? void 0 : _a.map((id) => {
                       var _a2;
-                      return /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Badge, { mr: 4, mb: 4, size: "sm", color: "indigo", children: (_a2 = genres == null ? void 0 : genres[id]) == null ? void 0 : _a2.name }, id, !1, {
+                      return /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Badge, { mr: 4, mb: 4, size: "sm", color: "indigo", children: (_a2 = genres == null ? void 0 : genres[id]) == null ? void 0 : _a2.name }, id, !1, {
                         fileName: "app/components/MovieItem.tsx",
-                        lineNumber: 98,
+                        lineNumber: 110,
                         columnNumber: 21
                       }, this);
                     }),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
-                      import_core6.Flex,
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                      import_core7.Flex,
                       {
                         direction: "row",
                         align: "center",
@@ -1215,24 +1256,24 @@ var import_jsx_dev_runtime11 = require("react/jsx-dev-runtime"), MovieItem = (pr
                         mt: 4,
                         wrap: "wrap",
                         children: [
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Flex, { direction: "row", align: "center", color: "dimmed", mt: 4, children: [
-                            /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_icons_react3.IconCalendarEvent, {}, void 0, !1, {
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Flex, { direction: "row", align: "center", color: "dimmed", mt: 4, children: [
+                            /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_icons_react3.IconCalendarEvent, {}, void 0, !1, {
                               fileName: "app/components/MovieItem.tsx",
-                              lineNumber: 110,
+                              lineNumber: 122,
                               columnNumber: 23
                             }, this),
-                            /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_core6.Text, { ml: 4, size: "xs", component: "span", children: data == null ? void 0 : data.release_date }, void 0, !1, {
+                            /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Text, { ml: 4, size: "xs", component: "span", children: data == null ? void 0 : data.release_date }, void 0, !1, {
                               fileName: "app/components/MovieItem.tsx",
-                              lineNumber: 111,
+                              lineNumber: 123,
                               columnNumber: 23
                             }, this)
                           ] }, void 0, !0, {
                             fileName: "app/components/MovieItem.tsx",
-                            lineNumber: 109,
+                            lineNumber: 121,
                             columnNumber: 21
                           }, this),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
-                            import_core6.Rating,
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                            import_core7.Rating,
                             {
                               mt: 4,
                               value: ((data == null ? void 0 : data.vote_average) ?? 0) / 2,
@@ -1243,7 +1284,7 @@ var import_jsx_dev_runtime11 = require("react/jsx-dev-runtime"), MovieItem = (pr
                             !1,
                             {
                               fileName: "app/components/MovieItem.tsx",
-                              lineNumber: 115,
+                              lineNumber: 127,
                               columnNumber: 21
                             },
                             this
@@ -1254,33 +1295,68 @@ var import_jsx_dev_runtime11 = require("react/jsx-dev-runtime"), MovieItem = (pr
                       !0,
                       {
                         fileName: "app/components/MovieItem.tsx",
-                        lineNumber: 102,
+                        lineNumber: 114,
                         columnNumber: 19
                       },
                       this
                     ),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(
-                      import_core6.Text,
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                      import_core7.Text,
                       {
                         mt: 4,
                         title: data == null ? void 0 : data.overview,
                         color: "dimmed",
                         size: "sm",
-                        lineClamp: 4,
+                        lineClamp: 2,
+                        sx: (theme) => ({
+                          [theme.fn.smallerThan("sm")]: {
+                            display: "-webkit-box"
+                          },
+                          [theme.fn.largerThan("sm")]: {
+                            display: "none"
+                          }
+                        }),
                         children: data == null ? void 0 : data.overview
                       },
                       void 0,
                       !1,
                       {
                         fileName: "app/components/MovieItem.tsx",
-                        lineNumber: 122,
+                        lineNumber: 134,
+                        columnNumber: 19
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                      import_core7.Text,
+                      {
+                        mt: 4,
+                        title: data == null ? void 0 : data.overview,
+                        color: "dimmed",
+                        size: "sm",
+                        lineClamp: 4,
+                        sx: (theme) => ({
+                          [theme.fn.largerThan("sm")]: {
+                            display: "-webkit-box"
+                          },
+                          [theme.fn.smallerThan("sm")]: {
+                            display: "none"
+                          }
+                        }),
+                        children: data == null ? void 0 : data.overview
+                      },
+                      void 0,
+                      !1,
+                      {
+                        fileName: "app/components/MovieItem.tsx",
+                        lineNumber: 151,
                         columnNumber: 19
                       },
                       this
                     )
                   ] }, void 0, !0, {
                     fileName: "app/components/MovieItem.tsx",
-                    lineNumber: 93,
+                    lineNumber: 105,
                     columnNumber: 17
                   }, this)
                 ] }, void 0, !0, {
@@ -1323,11 +1399,11 @@ var import_jsx_dev_runtime11 = require("react/jsx-dev-runtime"), MovieItem = (pr
     lineNumber: 40,
     columnNumber: 5
   }, this);
-}, MovieItem_default = import_react13.default.memo(MovieItem);
+}, MovieItem_default = import_react14.default.memo(MovieItem);
 
 // app/components/MovieItemPlaceholder.tsx
-var import_core7 = require("@mantine/core"), import_react15 = __toESM(require("react")), import_jsx_dev_runtime12 = require("react/jsx-dev-runtime"), MovieItemPlaceholder = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Card, { shadow: "sm", radius: "md", p: 0, withBorder: !0, h: "100%", children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Flex, { direction: "row", children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Box, { w: 200, children: /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Skeleton, { width: "200px", h: 300, bg: "gray.0" }, void 0, !1, {
+var import_core8 = require("@mantine/core"), import_react16 = __toESM(require("react")), import_jsx_dev_runtime13 = require("react/jsx-dev-runtime"), MovieItemPlaceholder = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Card, { shadow: "sm", radius: "md", p: 0, withBorder: !0, h: "100%", children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Flex, { direction: "row", children: [
+  /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Box, { w: 200, children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Skeleton, { width: "200px", h: 300, bg: "gray.0" }, void 0, !1, {
     fileName: "app/components/MovieItemPlaceholder.tsx",
     lineNumber: 11,
     columnNumber: 11
@@ -1336,43 +1412,43 @@ var import_core7 = require("@mantine/core"), import_react15 = __toESM(require("r
     lineNumber: 10,
     columnNumber: 9
   }, this),
-  /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Box, { ml: "md", mr: "md", mt: "sm", w: "100%", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Skeleton, { height: "1rem", width: "100%", bg: "gray.0" }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Box, { ml: "md", mr: "md", mt: "sm", w: "100%", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Skeleton, { height: "1rem", width: "100%", bg: "gray.0" }, void 0, !1, {
       fileName: "app/components/MovieItemPlaceholder.tsx",
       lineNumber: 14,
       columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Skeleton, { height: "1rem", width: "70%", bg: "gray.0", mt: "sm" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Skeleton, { height: "1rem", width: "70%", bg: "gray.0", mt: "sm" }, void 0, !1, {
       fileName: "app/components/MovieItemPlaceholder.tsx",
       lineNumber: 15,
       columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Skeleton, { height: "1rem", width: "30%", bg: "gray.0", mt: "sm" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Skeleton, { height: "1rem", width: "30%", bg: "gray.0", mt: "sm" }, void 0, !1, {
       fileName: "app/components/MovieItemPlaceholder.tsx",
       lineNumber: 16,
       columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Skeleton, { height: "0.75rem", width: "100%", bg: "gray.0", mt: "md" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Skeleton, { height: "0.75rem", width: "100%", bg: "gray.0", mt: "md" }, void 0, !1, {
       fileName: "app/components/MovieItemPlaceholder.tsx",
       lineNumber: 17,
       columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Skeleton, { height: "0.75rem", width: "100%", bg: "gray.0", mt: "sm" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Skeleton, { height: "0.75rem", width: "100%", bg: "gray.0", mt: "sm" }, void 0, !1, {
       fileName: "app/components/MovieItemPlaceholder.tsx",
       lineNumber: 18,
       columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Skeleton, { height: "0.75rem", width: "100%", bg: "gray.0", mt: "sm" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Skeleton, { height: "0.75rem", width: "100%", bg: "gray.0", mt: "sm" }, void 0, !1, {
       fileName: "app/components/MovieItemPlaceholder.tsx",
       lineNumber: 19,
       columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Skeleton, { height: "0.75rem", width: "100%", bg: "gray.0", mt: "sm" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Skeleton, { height: "0.75rem", width: "100%", bg: "gray.0", mt: "sm" }, void 0, !1, {
       fileName: "app/components/MovieItemPlaceholder.tsx",
       lineNumber: 20,
       columnNumber: 11
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Skeleton, { height: "0.75rem", width: "50%", bg: "gray.0", mt: "sm" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Skeleton, { height: "0.75rem", width: "50%", bg: "gray.0", mt: "sm" }, void 0, !1, {
       fileName: "app/components/MovieItemPlaceholder.tsx",
       lineNumber: 21,
       columnNumber: 11
@@ -1390,14 +1466,14 @@ var import_core7 = require("@mantine/core"), import_react15 = __toESM(require("r
   fileName: "app/components/MovieItemPlaceholder.tsx",
   lineNumber: 8,
   columnNumber: 5
-}, this), MovieItemPlaceholder_default = import_react15.default.memo(MovieItemPlaceholder);
+}, this), MovieItemPlaceholder_default = import_react16.default.memo(MovieItemPlaceholder);
 
 // app/components/MovieList.tsx
-var import_jsx_dev_runtime13 = require("react/jsx-dev-runtime"), MovieList = (props) => {
-  let { data: movies, onLoadMore, isLoadingMore, viewType = "grid" } = props, isTransitioning = (0, import_react16.useTransition)().state === "loading";
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_jsx_dev_runtime13.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_core8.Grid, { gutter: "md", mih: "100vh", children: [
-      movies == null ? void 0 : movies.map((item, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(GridItemWrapper, { viewType, children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(MovieItem_default, { data: item }, void 0, !1, {
+var import_jsx_dev_runtime14 = require("react/jsx-dev-runtime"), MovieList = (props) => {
+  let { data: movies, onLoadMore, isLoadingMore, viewType = "grid" } = props, isTransitioning = (0, import_react17.useTransition)().state === "loading";
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(import_jsx_dev_runtime14.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(import_core9.Grid, { gutter: "md", mih: "100vh", children: [
+      movies == null ? void 0 : movies.map((item, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(GridItemWrapper, { viewType, children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(MovieItem_default, { data: item }, void 0, !1, {
         fileName: "app/components/MovieList.tsx",
         lineNumber: 29,
         columnNumber: 13
@@ -1406,8 +1482,8 @@ var import_jsx_dev_runtime13 = require("react/jsx-dev-runtime"), MovieList = (pr
         lineNumber: 28,
         columnNumber: 11
       }, this)),
-      isLoadingMore && !isTransitioning && /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(import_jsx_dev_runtime13.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(GridItemWrapper, { viewType, children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(MovieItemPlaceholder_default, {}, void 0, !1, {
+      isLoadingMore && !isTransitioning && /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(import_jsx_dev_runtime14.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(GridItemWrapper, { viewType, children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(MovieItemPlaceholder_default, {}, void 0, !1, {
           fileName: "app/components/MovieList.tsx",
           lineNumber: 35,
           columnNumber: 15
@@ -1416,7 +1492,7 @@ var import_jsx_dev_runtime13 = require("react/jsx-dev-runtime"), MovieList = (pr
           lineNumber: 34,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(GridItemWrapper, { viewType, children: /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(MovieItemPlaceholder_default, {}, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(GridItemWrapper, { viewType, children: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(MovieItemPlaceholder_default, {}, void 0, !1, {
           fileName: "app/components/MovieList.tsx",
           lineNumber: 38,
           columnNumber: 15
@@ -1435,7 +1511,7 @@ var import_jsx_dev_runtime13 = require("react/jsx-dev-runtime"), MovieList = (pr
       lineNumber: 26,
       columnNumber: 7
     }, this),
-    !!(movies != null && movies.length) && !isLoadingMore && !isTransitioning && /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(
+    !!(movies != null && movies.length) && !isLoadingMore && !isTransitioning && /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(
       import_react_intersection_observer3.InView,
       {
         as: "div",
@@ -1458,8 +1534,8 @@ var import_jsx_dev_runtime13 = require("react/jsx-dev-runtime"), MovieList = (pr
     lineNumber: 25,
     columnNumber: 5
   }, this);
-}, GridItemWrapper = ({ children, viewType }) => /* @__PURE__ */ (0, import_jsx_dev_runtime13.jsxDEV)(
-  import_core8.Grid.Col,
+}, GridItemWrapper = ({ children, viewType }) => /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(
+  import_core9.Grid.Col,
   {
     ...viewType === "grid" ? {
       xs: 12,
@@ -1482,12 +1558,12 @@ var import_jsx_dev_runtime13 = require("react/jsx-dev-runtime"), MovieList = (pr
 ), MovieList_default = MovieList;
 
 // app/components/ViewTypeSegment.tsx
-var import_core9 = require("@mantine/core"), import_icons_react4 = require("@tabler/icons-react"), import_jsx_dev_runtime14 = require("react/jsx-dev-runtime"), ViewTypeSegment = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(
-  import_core9.SegmentedControl,
+var import_core10 = require("@mantine/core"), import_icons_react4 = require("@tabler/icons-react"), import_jsx_dev_runtime15 = require("react/jsx-dev-runtime"), ViewTypeSegment = (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+  import_core10.SegmentedControl,
   {
     data: [
       {
-        label: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(import_icons_react4.IconGridDots, { size: "1rem" }, void 0, !1, {
+        label: /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_icons_react4.IconGridDots, { size: "1rem" }, void 0, !1, {
           fileName: "app/components/ViewTypeSegment.tsx",
           lineNumber: 15,
           columnNumber: 18
@@ -1495,7 +1571,7 @@ var import_core9 = require("@mantine/core"), import_icons_react4 = require("@tab
         value: "grid"
       },
       {
-        label: /* @__PURE__ */ (0, import_jsx_dev_runtime14.jsxDEV)(import_icons_react4.IconList, { size: "1rem" }, void 0, !1, {
+        label: /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_icons_react4.IconList, { size: "1rem" }, void 0, !1, {
           fileName: "app/components/ViewTypeSegment.tsx",
           lineNumber: 19,
           columnNumber: 18
@@ -1504,13 +1580,21 @@ var import_core9 = require("@mantine/core"), import_icons_react4 = require("@tab
       }
     ],
     color: "indigo",
-    size: "lg",
+    size: "md",
     styles: {
       label: {
         display: "flex",
         justifyContent: "center",
         alignItems: "center"
       }
+    },
+    display: {
+      base: "none",
+      xs: "none",
+      sm: "none",
+      md: "flex",
+      lg: "flex",
+      xl: "flex"
     },
     ...props
   },
@@ -1533,12 +1617,15 @@ var SearchService = class extends RestAPIClient_default {
 }, searchService_default = new SearchService();
 
 // app/routes/search.tsx
-var import_jsx_dev_runtime15 = require("react/jsx-dev-runtime"), getParams = (searchParams) => ({
+var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams = (searchParams) => ({
   page: Number(searchParams.get("page") || "1"),
   query: searchParams.get("q") || ""
 }), loader3 = async ({ request }) => {
-  let { query, page } = getParams(new URL(request.url).searchParams), data = await searchService_default.searchMovies({ query, page });
-  return (0, import_node3.json)(data, {
+  let { query, page } = getParams(new URL(request.url).searchParams);
+  if (!query)
+    return (0, import_node3.redirect)("/");
+  let data = await searchService_default.searchMovies({ query, page });
+  return (0, import_node4.json)(data, {
     headers: { "Cache-Control": "public, max-age=120" }
   });
 }, shouldRevalidate2 = ({
@@ -1549,14 +1636,14 @@ var import_jsx_dev_runtime15 = require("react/jsx-dev-runtime"), getParams = (se
   currentUrl,
   nextUrl
 }) => currentUrl.searchParams.get("q") === nextUrl.searchParams.get("q") ? !1 : defaultShouldRevalidate, Search = () => {
-  let data = (0, import_react17.useLoaderData)(), [movies, setMovies] = (0, import_react18.useState)((data == null ? void 0 : data.results) || []);
-  (0, import_react18.useEffect)(() => {
+  let data = (0, import_react18.useLoaderData)(), [movies, setMovies] = (0, import_react19.useState)((data == null ? void 0 : data.results) || []);
+  (0, import_react19.useEffect)(() => {
     setMovies((data == null ? void 0 : data.results) || []);
   }, [data]);
-  let hasNextPage = (movies == null ? void 0 : movies.length) < (data == null ? void 0 : data.total_results), fetcher = (0, import_react17.useFetcher)(), page = (0, import_react18.useRef)(1), isLoadingMore = fetcher.state === "loading" && page.current > 1, [params, setParams] = (0, import_react17.useSearchParams)(), searchText = params.get("q"), loadMore = (0, import_react18.useCallback)(() => {
+  let hasNextPage = (movies == null ? void 0 : movies.length) < (data == null ? void 0 : data.total_results), fetcher = (0, import_react18.useFetcher)(), page = (0, import_react19.useRef)(1), isLoadingMore = fetcher.state === "loading" && page.current > 1, [params, setParams] = (0, import_react18.useSearchParams)(), searchText = params.get("q"), loadMore = (0, import_react19.useCallback)(() => {
     !hasNextPage || isLoadingMore || (page.current += 1, fetcher.load(`/search?page=${page.current}&q=${searchText}`));
   }, [fetcher, hasNextPage, isLoadingMore, searchText]);
-  (0, import_react18.useEffect)(() => {
+  (0, import_react19.useEffect)(() => {
     fetcher.data && setMovies((prevItems) => {
       var _a;
       return [
@@ -1566,55 +1653,55 @@ var import_jsx_dev_runtime15 = require("react/jsx-dev-runtime"), getParams = (se
     });
   }, [fetcher.data]);
   let viewType = params.get("view_type") || "grid", setViewType = (view_type) => setParams({ view_type }), isEmpty = !(movies != null && movies.length);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_core10.Container, { size: "lg", px: { xs: "md" }, my: "md", children: [
-    !isEmpty && /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_core10.Flex, { mb: "lg", mt: -16, align: "center", justify: "space-between", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_core10.Text, { ml: "md", mb: "md", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_core11.Container, { size: "lg", px: { xs: "md" }, my: "md", children: [
+    !isEmpty && /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_core11.Flex, { mb: "lg", mt: -16, align: "center", justify: "space-between", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_core11.Text, { ml: "md", mb: "md", children: [
         numberFormatter(data == null ? void 0 : data.total_results),
         " movies for:",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("b", { children: searchText }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("b", { children: searchText }, void 0, !1, {
           fileName: "app/routes/search.tsx",
-          lineNumber: 102,
+          lineNumber: 99,
           columnNumber: 13
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/search.tsx",
-        lineNumber: 100,
+        lineNumber: 97,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(ViewTypeSegment_default, { value: viewType, onChange: setViewType }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(ViewTypeSegment_default, { value: viewType, onChange: setViewType }, void 0, !1, {
         fileName: "app/routes/search.tsx",
-        lineNumber: 104,
+        lineNumber: 101,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/search.tsx",
-      lineNumber: 99,
+      lineNumber: 96,
       columnNumber: 9
     }, this),
-    isEmpty ? /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_core10.Flex, { pt: "5rem", align: "center", justify: "center", direction: "column", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_icons_react5.IconSearchOff, { size: "8rem" }, void 0, !1, {
+    isEmpty ? /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_core11.Flex, { pt: "5rem", align: "center", justify: "center", direction: "column", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_icons_react5.IconSearchOff, { size: "8rem" }, void 0, !1, {
         fileName: "app/routes/search.tsx",
-        lineNumber: 116,
+        lineNumber: 113,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(import_core10.Text, { size: "lg", mt: "lg", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_core11.Text, { size: "lg", mt: "lg", children: [
         "No result found for ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)("b", { children: searchText }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)("b", { children: searchText }, void 0, !1, {
           fileName: "app/routes/search.tsx",
-          lineNumber: 118,
+          lineNumber: 115,
           columnNumber: 33
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/search.tsx",
-        lineNumber: 117,
+        lineNumber: 114,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/search.tsx",
-      lineNumber: 115,
+      lineNumber: 112,
       columnNumber: 9
-    }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime15.jsxDEV)(
+    }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
       MovieList_default,
       {
         data: movies,
@@ -1625,14 +1712,14 @@ var import_jsx_dev_runtime15 = require("react/jsx-dev-runtime"), getParams = (se
       !1,
       {
         fileName: "app/routes/search.tsx",
-        lineNumber: 109,
+        lineNumber: 106,
         columnNumber: 9
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/routes/search.tsx",
-    lineNumber: 97,
+    lineNumber: 94,
     columnNumber: 5
   }, this);
 }, search_default = Search;
@@ -1644,9 +1731,9 @@ __export(routes_exports, {
   loader: () => loader4,
   shouldRevalidate: () => shouldRevalidate3
 });
-var import_core11 = require("@mantine/core"), import_node4 = require("@remix-run/node"), import_react19 = require("@remix-run/react");
-var import_react20 = require("react");
-var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (searchParams) => ({
+var import_core12 = require("@mantine/core"), import_node5 = require("@remix-run/node"), import_react20 = require("@remix-run/react");
+var import_react21 = require("react");
+var import_jsx_dev_runtime17 = require("react/jsx-dev-runtime"), getParams2 = (searchParams) => ({
   page: Number(searchParams.get("page") || "1"),
   tab: searchParams.get("tab") || "now-playing"
 }), loader4 = async ({ request }) => {
@@ -1669,7 +1756,7 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (s
         status: 404
       });
   }
-  return (0, import_node4.json)(data, {
+  return (0, import_node5.json)(data, {
     headers: { "Cache-Control": "public, max-age=120" }
   });
 }, shouldRevalidate3 = ({
@@ -1680,14 +1767,14 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (s
   currentUrl,
   nextUrl
 }) => currentUrl.searchParams.get("tab") === nextUrl.searchParams.get("tab") ? !1 : defaultShouldRevalidate, Index = () => {
-  let data = (0, import_react19.useLoaderData)(), [movies, setMovies] = (0, import_react20.useState)((data == null ? void 0 : data.results) || []);
-  (0, import_react20.useEffect)(() => {
+  let data = (0, import_react20.useLoaderData)(), [movies, setMovies] = (0, import_react21.useState)((data == null ? void 0 : data.results) || []);
+  (0, import_react21.useEffect)(() => {
     setMovies((data == null ? void 0 : data.results) || []);
   }, [data]);
-  let hasNextPage = (movies == null ? void 0 : movies.length) < (data == null ? void 0 : data.total_results), fetcher = (0, import_react19.useFetcher)(), page = (0, import_react20.useRef)(1), isLoadingMore = fetcher.state === "loading" && page.current > 1, loadMore = (0, import_react20.useCallback)(() => {
+  let hasNextPage = (movies == null ? void 0 : movies.length) < (data == null ? void 0 : data.total_results), fetcher = (0, import_react20.useFetcher)(), page = (0, import_react21.useRef)(1), isLoadingMore = fetcher.state === "loading" && page.current > 1, loadMore = (0, import_react21.useCallback)(() => {
     !hasNextPage || isLoadingMore || (page.current += 1, fetcher.load(`/?index&page=${page.current}`));
   }, [fetcher, hasNextPage, isLoadingMore]);
-  (0, import_react20.useEffect)(() => {
+  (0, import_react21.useEffect)(() => {
     fetcher.data && setMovies((prevItems) => {
       var _a;
       return [
@@ -1696,11 +1783,11 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (s
       ];
     });
   }, [fetcher.data]);
-  let [params, setParams] = (0, import_react19.useSearchParams)(), tab = params.get("tab") || "now-playing", viewType = params.get("view_type") || "grid";
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_core11.Container, { size: "lg", px: { xs: "md" }, my: "md", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(import_core11.Flex, { mb: "lg", mt: -16, align: "center", justify: "space-between", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
-        import_core11.SegmentedControl,
+  let [params, setParams] = (0, import_react20.useSearchParams)(), tab = params.get("tab") || "now-playing", viewType = params.get("view_type") || "grid";
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_core12.Container, { size: "lg", px: { xs: "md" }, my: "md", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(import_core12.Flex, { mb: "lg", mt: -16, align: "center", justify: "space-between", wrap: "wrap", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
+        import_core12.SegmentedControl,
         {
           onChange: (t) => setParams({ tab: t, view_type: viewType }),
           value: tab,
@@ -1718,7 +1805,15 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (s
               value: "upcoming"
             }
           ],
-          color: "indigo"
+          color: "indigo",
+          w: {
+            base: "100%",
+            xs: "auto",
+            sm: "auto",
+            md: "auto",
+            lg: "auto",
+            xl: "auto"
+          }
         },
         void 0,
         !1,
@@ -1729,9 +1824,9 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (s
         },
         this
       ),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(ViewTypeSegment_default, { value: viewType, onChange: (view_type) => setParams({ view_type, tab }) }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(ViewTypeSegment_default, { value: viewType, onChange: (view_type) => setParams({ view_type, tab }) }, void 0, !1, {
         fileName: "app/routes/index.tsx",
-        lineNumber: 121,
+        lineNumber: 129,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
@@ -1739,7 +1834,7 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (s
       lineNumber: 101,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime16.jsxDEV)(
+    /* @__PURE__ */ (0, import_jsx_dev_runtime17.jsxDEV)(
       MovieList_default,
       {
         data: movies,
@@ -1751,7 +1846,7 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (s
       !1,
       {
         fileName: "app/routes/index.tsx",
-        lineNumber: 123,
+        lineNumber: 131,
         columnNumber: 7
       },
       this
@@ -1764,7 +1859,7 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (s
 }, routes_default = Index;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "4d6d4063", entry: { module: "/build/entry.client-LG6JZSWS.js", imports: ["/build/_shared/chunk-3IOBQAAG.js", "/build/_shared/chunk-IOWAIRJJ.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-57OGM6YM.js", imports: ["/build/_shared/chunk-FQXW5WBH.js", "/build/_shared/chunk-QELSDERN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-CLNCSG6X.js", imports: ["/build/_shared/chunk-W7MG5XO5.js", "/build/_shared/chunk-RANRXGSY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie/$movieId": { id: "routes/movie/$movieId", parentId: "root", path: "movie/:movieId", index: void 0, caseSensitive: void 0, module: "/build/routes/movie/$movieId-HA2L4XWZ.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-RANRXGSY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/search": { id: "routes/search", parentId: "root", path: "search", index: void 0, caseSensitive: void 0, module: "/build/routes/search-GY4K2MMW.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-W7MG5XO5.js", "/build/_shared/chunk-RANRXGSY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-4D6D4063.js" };
+var assets_manifest_default = { version: "94dada93", entry: { module: "/build/entry.client-X36U6LYX.js", imports: ["/build/_shared/chunk-L47QJRAF.js", "/build/_shared/chunk-YNHLTX3R.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-PTKN2PTW.js", imports: ["/build/_shared/chunk-DS3B57DD.js", "/build/_shared/chunk-5PSC44L3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-EU4T7ZVO.js", imports: ["/build/_shared/chunk-NZDV4H7S.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie/$movieId": { id: "routes/movie/$movieId", parentId: "root", path: "movie/:movieId", index: void 0, caseSensitive: void 0, module: "/build/routes/movie/$movieId-SAGZKT6R.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/search": { id: "routes/search", parentId: "root", path: "search", index: void 0, caseSensitive: void 0, module: "/build/routes/search-7GRFRURV.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-NZDV4H7S.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-94DADA93.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

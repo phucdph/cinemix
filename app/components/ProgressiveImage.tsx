@@ -2,6 +2,8 @@ import type { ImageProps } from "@mantine/core";
 import { useState, useEffect } from "react";
 import { Image as MantineImage } from "@mantine/core";
 import { useInView } from "react-intersection-observer";
+import placeholderImg from "~/assets/images/placeholder.jpeg";
+
 interface Props extends ImageProps {
   src?: string;
   placeholder?: string;
@@ -27,6 +29,9 @@ const ProgressiveImage: React.FC<Props> = (props) => {
       img.onload = () => {
         setImgSrc(src);
       };
+      img.onerror = () => {
+        setImgSrc(placeholderImg)
+      }
     }
   }, [src, inView]);
 

@@ -597,7 +597,13 @@ __export(movieId_exports, {
 var import_core5 = require("@mantine/core"), import_node2 = require("@remix-run/node"), import_react11 = require("@remix-run/react"), import_icons_react2 = require("@tabler/icons-react");
 
 // app/components/ProgressiveImage.tsx
-var import_react8 = require("react"), import_core4 = require("@mantine/core"), import_react_intersection_observer = require("react-intersection-observer"), import_jsx_dev_runtime9 = require("react/jsx-dev-runtime"), ProgressiveImage = (props) => {
+var import_react8 = require("react"), import_core4 = require("@mantine/core"), import_react_intersection_observer = require("react-intersection-observer");
+
+// app/assets/images/placeholder.jpeg
+var placeholder_default = "/build/_assets/placeholder-6HUXTEQI.jpeg";
+
+// app/components/ProgressiveImage.tsx
+var import_jsx_dev_runtime9 = require("react/jsx-dev-runtime"), ProgressiveImage = (props) => {
   let { placeholder, src, ...rest } = props, [imgSrc, setImgSrc] = (0, import_react8.useState)(placeholder || src);
   (0, import_react8.useEffect)(() => {
     setImgSrc(placeholder || src);
@@ -611,6 +617,8 @@ var import_react8 = require("react"), import_core4 = require("@mantine/core"), i
       let img = new Image();
       img.src = src, img.onload = () => {
         setImgSrc(src);
+      }, img.onerror = () => {
+        setImgSrc(placeholder_default);
       };
     }
   }, [src, inView]);
@@ -646,7 +654,7 @@ var import_react8 = require("react"), import_core4 = require("@mantine/core"), i
     !1,
     {
       fileName: "app/components/ProgressiveImage.tsx",
-      lineNumber: 37,
+      lineNumber: 42,
       columnNumber: 5
     },
     this
@@ -1756,7 +1764,7 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (s
 }, routes_default = Index;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "d0247d7e", entry: { module: "/build/entry.client-LG6JZSWS.js", imports: ["/build/_shared/chunk-3IOBQAAG.js", "/build/_shared/chunk-IOWAIRJJ.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-57OGM6YM.js", imports: ["/build/_shared/chunk-FQXW5WBH.js", "/build/_shared/chunk-QELSDERN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-VQAWR64V.js", imports: ["/build/_shared/chunk-T3EFA7G3.js", "/build/_shared/chunk-JVIXDI3W.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie/$movieId": { id: "routes/movie/$movieId", parentId: "root", path: "movie/:movieId", index: void 0, caseSensitive: void 0, module: "/build/routes/movie/$movieId-CMHT7VE5.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-JVIXDI3W.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/search": { id: "routes/search", parentId: "root", path: "search", index: void 0, caseSensitive: void 0, module: "/build/routes/search-76IXK3ZK.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-T3EFA7G3.js", "/build/_shared/chunk-JVIXDI3W.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-D0247D7E.js" };
+var assets_manifest_default = { version: "4d6d4063", entry: { module: "/build/entry.client-LG6JZSWS.js", imports: ["/build/_shared/chunk-3IOBQAAG.js", "/build/_shared/chunk-IOWAIRJJ.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-57OGM6YM.js", imports: ["/build/_shared/chunk-FQXW5WBH.js", "/build/_shared/chunk-QELSDERN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-CLNCSG6X.js", imports: ["/build/_shared/chunk-W7MG5XO5.js", "/build/_shared/chunk-RANRXGSY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie/$movieId": { id: "routes/movie/$movieId", parentId: "root", path: "movie/:movieId", index: void 0, caseSensitive: void 0, module: "/build/routes/movie/$movieId-HA2L4XWZ.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-RANRXGSY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/search": { id: "routes/search", parentId: "root", path: "search", index: void 0, caseSensitive: void 0, module: "/build/routes/search-GY4K2MMW.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-W7MG5XO5.js", "/build/_shared/chunk-RANRXGSY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-4D6D4063.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

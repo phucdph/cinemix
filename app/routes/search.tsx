@@ -1,23 +1,17 @@
 import {
-  Box,
-  Card,
   Container,
   Flex,
-  Grid,
-  Image,
-  SegmentedControl,
   Text,
 } from "@mantine/core";
-import type { LoaderArgs } from "@remix-run/node";
+import type { LoaderArgs} from "@remix-run/node";
+import { redirect } from "@remix-run/node";
 import { json } from "@remix-run/node";
+import type {
+  ShouldRevalidateFunction} from "@remix-run/react";
 import {
-  Link,
-  ShouldRevalidateFunction,
   useFetcher,
   useLoaderData,
-  useParams,
   useSearchParams,
-  useTransition,
 } from "@remix-run/react";
 import { IconSearchOff } from "@tabler/icons-react";
 import { useCallback, useRef, useState, useEffect } from "react";
@@ -33,6 +27,9 @@ const getParams = (searchParams: URLSearchParams) => ({
 
 export const loader = async ({ request }: LoaderArgs) => {
   const { query, page } = getParams(new URL(request.url).searchParams);
+  if (!query) {
+    return redirect("/");
+  }
   const data = await searchService.searchMovies({ query, page });
   return json(data, {
     headers: { "Cache-Control": "public, max-age=120" },

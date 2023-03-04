@@ -1,4 +1,12 @@
-import { Button, Container, Flex, Header, Input, Text } from "@mantine/core";
+import {
+  Button,
+  Container,
+  Flex,
+  Header,
+  Input,
+  Text,
+  ActionIcon,
+} from "@mantine/core";
 import { Link, useTransition } from "@remix-run/react";
 import { IconSearch } from "@tabler/icons-react";
 
@@ -30,16 +38,19 @@ const AppHeader: React.FC = (props) => {
                 placeholder="Search"
                 variant="filled"
                 disabled={isSearching}
+                rightSection={
+                  <ActionIcon
+                    color="indigo"
+                    type="submit"
+                    disabled={isSearching}
+                    loading={isSearching}
+                    variant="filled"
+                    size="lg"
+                  >
+                    <IconSearch size="1.2rem" />
+                  </ActionIcon>
+                }
               />
-              <Button
-                size="sm"
-                color="indigo"
-                type="submit"
-                disabled={isSearching}
-                loading={isSearching}
-              >
-                <IconSearch size="1.2rem" />
-              </Button>
             </Flex>
           </form>
         </Flex>

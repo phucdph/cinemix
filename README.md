@@ -90,6 +90,11 @@ pnpm dev
 - [x] Improve UX loading by skeleton loading.
 - [x] Enhance responsive.
 
+#### The following **additional** features are implemented:
+
+- [x] Add a tab bar for **Upcoming** movies.
+- [x] Add **Similar Movies** section.
+- [x] Implement Progressive Load Image.
 ## Built With
 
   

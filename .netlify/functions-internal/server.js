@@ -394,6 +394,8 @@ var loader = async () => {
   return (0, import_node.json)({ config, genres });
 }, shouldRevalidate = () => !1;
 function App() {
+  var _a, _b, _c, _d;
+  let data = (0, import_react7.useLoaderData)();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
     import_core3.MantineProvider,
     {
@@ -406,66 +408,98 @@ function App() {
         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("head", { children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_remix2.StylesPlaceholder, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 56,
+            lineNumber: 58,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_react7.Meta, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 57,
+            lineNumber: 59,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_react7.Links, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 58,
+            lineNumber: 60,
             columnNumber: 11
-          }, this)
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
+            "link",
+            {
+              href: (_b = (_a = data == null ? void 0 : data.config) == null ? void 0 : _a.images) == null ? void 0 : _b.base_url,
+              rel: "preconnect",
+              crossOrigin: "anonymous"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/root.tsx",
+              lineNumber: 61,
+              columnNumber: 11
+            },
+            this
+          ),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
+            "link",
+            {
+              href: (_d = (_c = data == null ? void 0 : data.config) == null ? void 0 : _c.images) == null ? void 0 : _d.secure_base_url,
+              rel: "preconnect",
+              crossOrigin: "anonymous"
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/root.tsx",
+              lineNumber: 66,
+              columnNumber: 11
+            },
+            this
+          )
         ] }, void 0, !0, {
           fileName: "app/root.tsx",
-          lineNumber: 55,
+          lineNumber: 57,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("body", { children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_core3.AppShell, { padding: "md", header: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(AppHeader_default, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 61,
+            lineNumber: 73,
             columnNumber: 42
           }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_react7.Outlet, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 62,
+            lineNumber: 74,
             columnNumber: 13
           }, this) }, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 61,
+            lineNumber: 73,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_react7.ScrollRestoration, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 64,
+            lineNumber: 76,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_react7.Scripts, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 65,
+            lineNumber: 77,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_react7.LiveReload, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 66,
+            lineNumber: 78,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(RouterTransition, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 67,
+            lineNumber: 79,
             columnNumber: 11
           }, this)
         ] }, void 0, !0, {
           fileName: "app/root.tsx",
-          lineNumber: 60,
+          lineNumber: 72,
           columnNumber: 9
         }, this)
       ] }, void 0, !0, {
         fileName: "app/root.tsx",
-        lineNumber: 54,
+        lineNumber: 56,
         columnNumber: 7
       }, this)
     },
@@ -473,7 +507,7 @@ function App() {
     !1,
     {
       fileName: "app/root.tsx",
-      lineNumber: 47,
+      lineNumber: 49,
       columnNumber: 5
     },
     this
@@ -493,51 +527,51 @@ function CatchBoundary() {
         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("head", { children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_remix2.StylesPlaceholder, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 87,
+            lineNumber: 99,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_react7.Meta, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 88,
+            lineNumber: 100,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_react7.Links, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 89,
+            lineNumber: 101,
             columnNumber: 11
           }, this)
         ] }, void 0, !0, {
           fileName: "app/root.tsx",
-          lineNumber: 86,
+          lineNumber: 98,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("body", { children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_core3.AppShell, { padding: "md", header: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(AppHeader_default, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 92,
+            lineNumber: 104,
             columnNumber: 42
           }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(ErrorHandler_default, { status: caught.status }, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 93,
+            lineNumber: 105,
             columnNumber: 13
           }, this) }, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 92,
+            lineNumber: 104,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(import_react7.ScrollRestoration, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 95,
+            lineNumber: 107,
             columnNumber: 11
           }, this)
         ] }, void 0, !0, {
           fileName: "app/root.tsx",
-          lineNumber: 91,
+          lineNumber: 103,
           columnNumber: 9
         }, this)
       ] }, void 0, !0, {
         fileName: "app/root.tsx",
-        lineNumber: 85,
+        lineNumber: 97,
         columnNumber: 7
       }, this)
     },
@@ -545,7 +579,7 @@ function CatchBoundary() {
     !1,
     {
       fileName: "app/root.tsx",
-      lineNumber: 78,
+      lineNumber: 90,
       columnNumber: 5
     },
     this
@@ -633,8 +667,8 @@ var useConfiguration = () => {
 
 // app/hooks/useGetImagePath.ts
 var useGetImagePath = () => {
-  var _a;
-  let config = useConfiguration_default(), url = (_a = config == null ? void 0 : config.images) == null ? void 0 : _a.base_url;
+  var _a, _b;
+  let config = useConfiguration_default(), url = ((_a = config == null ? void 0 : config.images) == null ? void 0 : _a.secure_base_url) || ((_b = config == null ? void 0 : config.images) == null ? void 0 : _b.base_url);
   return (0, import_react10.useCallback)(
     (path, size = "original") => `${url}/${size}/${path || ""}`,
     [url]
@@ -683,12 +717,12 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
   data,
   parentsData
 }) => {
-  var _a, _b, _c, _d, _e, _f, _g, _h;
+  var _a, _b, _c, _d, _e, _f, _g, _h, _i;
   let config = (_a = parentsData == null ? void 0 : parentsData.root) == null ? void 0 : _a.config;
   return {
-    "og:image": `${(_b = config == null ? void 0 : config.images) == null ? void 0 : _b.base_url}/${((_d = (_c = config == null ? void 0 : config.images) == null ? void 0 : _c.backdrop_sizes) == null ? void 0 : _d[0]) || "original"}/${(_e = data == null ? void 0 : data.data) == null ? void 0 : _e.backdrop_path}`,
-    description: (_f = data == null ? void 0 : data.data) == null ? void 0 : _f.overview,
-    title: (_g = data == null ? void 0 : data.data) != null && _g.title ? `${(_h = data == null ? void 0 : data.data) == null ? void 0 : _h.title} | Cinemix` : void 0
+    "og:image": `${((_b = config == null ? void 0 : config.images) == null ? void 0 : _b.secure_base_url) || ((_c = config == null ? void 0 : config.images) == null ? void 0 : _c.base_url)}/${((_e = (_d = config == null ? void 0 : config.images) == null ? void 0 : _d.backdrop_sizes) == null ? void 0 : _e[0]) || "original"}/${(_f = data == null ? void 0 : data.data) == null ? void 0 : _f.backdrop_path}`,
+    description: (_g = data == null ? void 0 : data.data) == null ? void 0 : _g.overview,
+    title: (_h = data == null ? void 0 : data.data) != null && _h.title ? `${(_i = data == null ? void 0 : data.data) == null ? void 0 : _i.title} | Cinemix` : void 0
   };
 }, MovieDetail = (props) => {
   var _a, _b, _c, _d, _e;
@@ -709,17 +743,17 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
         !1,
         {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 79,
+          lineNumber: 81,
           columnNumber: 13
         },
         this
       ) }, void 0, !1, {
         fileName: "app/routes/movie/$movieId.tsx",
-        lineNumber: 78,
+        lineNumber: 80,
         columnNumber: 11
       }, this) }, void 0, !1, {
         fileName: "app/routes/movie/$movieId.tsx",
-        lineNumber: 77,
+        lineNumber: 79,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Grid.Col, { xs: 12, sm: 8, md: 8, children: [
@@ -727,32 +761,32 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
           data == null ? void 0 : data.title,
           (data == null ? void 0 : data.status) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Badge, { variant: "filled", size: "md", color: "teal", mb: 6, ml: 6, children: data.status }, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 93,
+            lineNumber: 95,
             columnNumber: 15
           }, this),
           (data == null ? void 0 : data.adult) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Badge, { variant: "filled", size: "xs", color: "red", mb: 6, ml: 6, children: "18+" }, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 98,
+            lineNumber: 100,
             columnNumber: 15
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 90,
+          lineNumber: 92,
           columnNumber: 11
         }, this),
         (data == null ? void 0 : data.original_title) !== (data == null ? void 0 : data.title) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { weight: 500, size: "md", color: "dimmed", children: data == null ? void 0 : data.original_title }, void 0, !1, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 105,
+          lineNumber: 107,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { size: "xs", italic: !0, color: "dimmed", children: data == null ? void 0 : data.tagline }, void 0, !1, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 109,
+          lineNumber: 111,
           columnNumber: 11
         }, this),
         !!((_a = data == null ? void 0 : data.production_companies) != null && _a.length) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { size: "sm", mt: 4, children: (_b = data == null ? void 0 : data.production_companies) == null ? void 0 : _b.map((c) => c.name).join(", ") }, void 0, !1, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 113,
+          lineNumber: 115,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
@@ -768,36 +802,36 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
           !1,
           {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 118,
+            lineNumber: 120,
             columnNumber: 11
           },
           this
         ),
         (_c = data == null ? void 0 : data.genres) == null ? void 0 : _c.map((genre) => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Badge, { mr: 4, mb: 4, mt: 4, size: "sm", color: "indigo", children: genre == null ? void 0 : genre.name }, genre.id, !1, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 126,
+          lineNumber: 128,
           columnNumber: 13
         }, this)),
         /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Flex, { direction: "row", align: "center", color: "dimmed", mt: 4, children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_icons_react2.IconCalendarEvent, {}, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 131,
+            lineNumber: 133,
             columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { ml: 4, size: "sm", component: "span", children: data == null ? void 0 : data.release_date }, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 132,
+            lineNumber: 134,
             columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 130,
+          lineNumber: 132,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Flex, { direction: "row", align: "center", color: "dimmed", mt: 6, children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_icons_react2.IconClock, {}, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 137,
+            lineNumber: 139,
             columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { ml: 4, size: "sm", component: "span", children: [
@@ -805,59 +839,59 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
             " mins"
           ] }, void 0, !0, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 138,
+            lineNumber: 140,
             columnNumber: 13
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 136,
+          lineNumber: 138,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Flex, { direction: "row", align: "center", color: "dimmed", mt: 6, children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_icons_react2.IconHeadphones, {}, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 143,
+            lineNumber: 145,
             columnNumber: 13
           }, this),
           (_d = data == null ? void 0 : data.spoken_languages) == null ? void 0 : _d.map((lng) => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Badge, { mr: 6, size: "sm", children: lng.english_name }, lng.iso_639_1, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 145,
+            lineNumber: 147,
             columnNumber: 15
           }, this))
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 142,
+          lineNumber: 144,
           columnNumber: 11
         }, this),
         !!(data != null && data.budget) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { mt: 4, size: "sm", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("b", { children: "Production Budget" }, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 152,
+            lineNumber: 154,
             columnNumber: 15
           }, this),
           ": $",
           numberFormatter(data == null ? void 0 : data.budget)
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 151,
+          lineNumber: 153,
           columnNumber: 13
         }, this),
         !!(data != null && data.revenue) && /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { mt: 4, size: "sm", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("b", { children: "Revenue" }, void 0, !1, {
             fileName: "app/routes/movie/$movieId.tsx",
-            lineNumber: 157,
+            lineNumber: 159,
             columnNumber: 15
           }, this),
           ": $",
           numberFormatter(data == null ? void 0 : data.revenue)
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 156,
+          lineNumber: 158,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { mt: 4, title: data == null ? void 0 : data.overview, color: "dimmed", size: "sm", children: data == null ? void 0 : data.overview }, void 0, !1, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 160,
+          lineNumber: 162,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Group, { mt: "sm", children: [
@@ -875,7 +909,7 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
             !1,
             {
               fileName: "app/routes/movie/$movieId.tsx",
-              lineNumber: 164,
+              lineNumber: 166,
               columnNumber: 13
             },
             this
@@ -893,30 +927,30 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
             !1,
             {
               fileName: "app/routes/movie/$movieId.tsx",
-              lineNumber: 173,
+              lineNumber: 175,
               columnNumber: 13
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 163,
+          lineNumber: 165,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/movie/$movieId.tsx",
-        lineNumber: 89,
+        lineNumber: 91,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/movie/$movieId.tsx",
-      lineNumber: 76,
+      lineNumber: 78,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Box, { mt: "md", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { weight: 500, size: "lg", children: "Similar Movies" }, void 0, !1, {
         fileName: "app/routes/movie/$movieId.tsx",
-        lineNumber: 185,
+        lineNumber: 187,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
@@ -973,18 +1007,18 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
                       !1,
                       {
                         fileName: "app/routes/movie/$movieId.tsx",
-                        lineNumber: 216,
+                        lineNumber: 218,
                         columnNumber: 19
                       },
                       this
                     ) }, movie.id, !1, {
                       fileName: "app/routes/movie/$movieId.tsx",
-                      lineNumber: 215,
+                      lineNumber: 217,
                       columnNumber: 17
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_core5.Text, { size: "sm", mx: "xs", my: "sm", align: "center", children: movie == null ? void 0 : movie.title }, void 0, !1, {
                       fileName: "app/routes/movie/$movieId.tsx",
-                      lineNumber: 236,
+                      lineNumber: 238,
                       columnNumber: 17
                     }, this)
                   ]
@@ -993,7 +1027,7 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
                 !0,
                 {
                   fileName: "app/routes/movie/$movieId.tsx",
-                  lineNumber: 205,
+                  lineNumber: 207,
                   columnNumber: 15
                 },
                 this
@@ -1003,7 +1037,7 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
             !1,
             {
               fileName: "app/routes/movie/$movieId.tsx",
-              lineNumber: 200,
+              lineNumber: 202,
               columnNumber: 13
             },
             this
@@ -1013,19 +1047,19 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), loader2 = async
         !1,
         {
           fileName: "app/routes/movie/$movieId.tsx",
-          lineNumber: 188,
+          lineNumber: 190,
           columnNumber: 9
         },
         this
       )
     ] }, void 0, !0, {
       fileName: "app/routes/movie/$movieId.tsx",
-      lineNumber: 184,
+      lineNumber: 186,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/movie/$movieId.tsx",
-    lineNumber: 75,
+    lineNumber: 77,
     columnNumber: 5
   }, this);
 };
@@ -1033,7 +1067,7 @@ function CatchBoundary2() {
   let caught = (0, import_react11.useCatch)();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(ErrorHandler_default, { status: caught.status }, void 0, !1, {
     fileName: "app/routes/movie/$movieId.tsx",
-    lineNumber: 250,
+    lineNumber: 252,
     columnNumber: 10
   }, this);
 }
@@ -1615,7 +1649,7 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (s
       break;
     }
     case "top-rated": {
-      data = await movieService_default.getNowPlayingMovies({ page });
+      data = await movieService_default.getTopRatedMovies({ page });
       break;
     }
     case "upcoming": {
@@ -1722,7 +1756,7 @@ var import_jsx_dev_runtime16 = require("react/jsx-dev-runtime"), getParams2 = (s
 }, routes_default = Index;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "9198f9cc", entry: { module: "/build/entry.client-LG6JZSWS.js", imports: ["/build/_shared/chunk-3IOBQAAG.js", "/build/_shared/chunk-IOWAIRJJ.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-MZD5KORZ.js", imports: ["/build/_shared/chunk-FQXW5WBH.js", "/build/_shared/chunk-QELSDERN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-D4BKRADR.js", imports: ["/build/_shared/chunk-XVZGG4VP.js", "/build/_shared/chunk-RZYCWGQX.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie/$movieId": { id: "routes/movie/$movieId", parentId: "root", path: "movie/:movieId", index: void 0, caseSensitive: void 0, module: "/build/routes/movie/$movieId-RXBV4XVV.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-RZYCWGQX.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/search": { id: "routes/search", parentId: "root", path: "search", index: void 0, caseSensitive: void 0, module: "/build/routes/search-IW3KU47P.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-XVZGG4VP.js", "/build/_shared/chunk-RZYCWGQX.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-9198F9CC.js" };
+var assets_manifest_default = { version: "d0247d7e", entry: { module: "/build/entry.client-LG6JZSWS.js", imports: ["/build/_shared/chunk-3IOBQAAG.js", "/build/_shared/chunk-IOWAIRJJ.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-57OGM6YM.js", imports: ["/build/_shared/chunk-FQXW5WBH.js", "/build/_shared/chunk-QELSDERN.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-VQAWR64V.js", imports: ["/build/_shared/chunk-T3EFA7G3.js", "/build/_shared/chunk-JVIXDI3W.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie/$movieId": { id: "routes/movie/$movieId", parentId: "root", path: "movie/:movieId", index: void 0, caseSensitive: void 0, module: "/build/routes/movie/$movieId-CMHT7VE5.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-JVIXDI3W.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/search": { id: "routes/search", parentId: "root", path: "search", index: void 0, caseSensitive: void 0, module: "/build/routes/search-76IXK3ZK.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-T3EFA7G3.js", "/build/_shared/chunk-JVIXDI3W.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-D0247D7E.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

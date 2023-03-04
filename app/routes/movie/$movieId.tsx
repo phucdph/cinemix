@@ -57,9 +57,11 @@ export const meta: MetaFunction<typeof loader, { root: typeof rootLoader }> = ({
   parentsData,
 }) => {
   const config = parentsData?.root?.config;
-  const ogImg = `${config?.images?.base_url}/${
-    config?.images?.backdrop_sizes?.[0] || "original"
-  }/${data?.data?.backdrop_path}`;
+  const ogImg = `${
+    config?.images?.secure_base_url || config?.images?.base_url
+  }/${config?.images?.backdrop_sizes?.[0] || "original"}/${
+    data?.data?.backdrop_path
+  }`;
   return {
     "og:image": ogImg,
     description: data?.data?.overview,

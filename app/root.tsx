@@ -1,4 +1,4 @@
-import { json, MetaFunction } from "@remix-run/node";
+import { json, LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
   useCatch,
+  useLoaderData,
 } from "@remix-run/react";
 import {
   MantineProvider,
@@ -43,6 +44,7 @@ export const loader = async () => {
 export const shouldRevalidate = () => false;
 
 export default function App() {
+  const data = useLoaderData<typeof loader>();
   return (
     <MantineProvider
       withGlobalStyles
@@ -56,6 +58,16 @@ export default function App() {
           <StylesPlaceholder />
           <Meta />
           <Links />
+          <link
+            href={data?.config?.images?.base_url}
+            rel="preconnect"
+            crossOrigin="anonymous"
+          />
+          <link
+            href={data?.config?.images?.secure_base_url}
+            rel="preconnect"
+            crossOrigin="anonymous"
+          />
         </head>
         <body>
           <AppShell padding="md" header={<AppHeader />}>

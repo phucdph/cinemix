@@ -102,15 +102,52 @@ const MovieItem: React.FC<Props> = (props) => {
                   </AspectRatio>
                 </Box>
 
-                <Box ml="md" mr="md" mt="sm">
-                  <Text weight={500} size="lg" mr={36}>
+                <Box
+                  mx={{
+                    base: "xs",
+                    xs: "sm",
+                    sm: "sm",
+                    md: "md",
+                    lg: "md",
+                    xl: "md",
+                  }}
+                  mt={{
+                    base: 4,
+                    xs: 4,
+                    sm: "xs",
+                    md: "sm",
+                    lg: "sm",
+                    xl: "sm",
+                  }}
+                >
+                  <Text
+                    weight={500}
+                    mr={36}
+                    sx={(theme) => ({
+                      [theme.fn.largerThan("sm")]: {
+                        fontSize: theme.fontSizes.lg,
+                      },
+                      [theme.fn.smallerThan("sm")]: {
+                        fontSize: theme.fontSizes.sm,
+                      },
+                    })}
+                  >
                     {data?.title}
                   </Text>
-                  {data?.genre_ids?.map((id) => (
-                    <Badge mr={4} mb={4} key={id} size="sm" color="indigo">
-                      {genres?.[id]?.name}
-                    </Badge>
-                  ))}
+                  <Flex
+                    wrap="wrap"
+                    sx={(theme) => ({
+                      [theme.fn.smallerThan("xs")]: {
+                        display: "none",
+                      },
+                    })}
+                  >
+                    {data?.genre_ids?.map((id) => (
+                      <Badge mr={4} mb={4} key={id} size="sm" color="indigo">
+                        {genres?.[id]?.name}
+                      </Badge>
+                    ))}
+                  </Flex>
                   <Flex
                     direction="row"
                     align="center"
@@ -125,6 +162,7 @@ const MovieItem: React.FC<Props> = (props) => {
                       </Text>
                     </Flex>
                     <Rating
+                      size="sm"
                       mt={4}
                       value={(data?.vote_average ?? 0) / 2}
                       fractions={3}
@@ -136,32 +174,7 @@ const MovieItem: React.FC<Props> = (props) => {
                     title={data?.overview}
                     color="dimmed"
                     size="sm"
-                    lineClamp={2}
-                    sx={(theme) => ({
-                      [theme.fn.smallerThan("sm")]: {
-                        display: "-webkit-box",
-                      },
-                      [theme.fn.largerThan("sm")]: {
-                        display: "none",
-                      },
-                    })}
-                  >
-                    {data?.overview}
-                  </Text>
-                  <Text
-                    mt={4}
-                    title={data?.overview}
-                    color="dimmed"
-                    size="sm"
                     lineClamp={4}
-                    sx={(theme) => ({
-                      [theme.fn.largerThan("sm")]: {
-                        display: "-webkit-box",
-                      },
-                      [theme.fn.smallerThan("sm")]: {
-                        display: "none",
-                      },
-                    })}
                   >
                     {data?.overview}
                   </Text>

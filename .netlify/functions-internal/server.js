@@ -1233,132 +1233,161 @@ var import_jsx_dev_runtime12 = require("react/jsx-dev-runtime"), MovieItem = (pr
                     },
                     this
                   ),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Box, { ml: "md", mr: "md", mt: "sm", children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Text, { weight: 500, size: "lg", mr: 36, children: data == null ? void 0 : data.title }, void 0, !1, {
-                      fileName: "app/components/MovieItem.tsx",
-                      lineNumber: 106,
-                      columnNumber: 19
-                    }, this),
-                    (_a = data == null ? void 0 : data.genre_ids) == null ? void 0 : _a.map((id) => {
-                      var _a2;
-                      return /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Badge, { mr: 4, mb: 4, size: "sm", color: "indigo", children: (_a2 = genres == null ? void 0 : genres[id]) == null ? void 0 : _a2.name }, id, !1, {
-                        fileName: "app/components/MovieItem.tsx",
-                        lineNumber: 110,
-                        columnNumber: 21
-                      }, this);
-                    }),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
-                      import_core7.Flex,
-                      {
-                        direction: "row",
-                        align: "center",
-                        justify: "space-between",
-                        mt: 4,
-                        wrap: "wrap",
-                        children: [
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Flex, { direction: "row", align: "center", color: "dimmed", mt: 4, children: [
-                            /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_icons_react3.IconCalendarEvent, {}, void 0, !1, {
-                              fileName: "app/components/MovieItem.tsx",
-                              lineNumber: 122,
-                              columnNumber: 23
-                            }, this),
-                            /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Text, { ml: 4, size: "xs", component: "span", children: data == null ? void 0 : data.release_date }, void 0, !1, {
-                              fileName: "app/components/MovieItem.tsx",
-                              lineNumber: 123,
-                              columnNumber: 23
-                            }, this)
-                          ] }, void 0, !0, {
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                    import_core7.Box,
+                    {
+                      mx: {
+                        base: "xs",
+                        xs: "sm",
+                        sm: "sm",
+                        md: "md",
+                        lg: "md",
+                        xl: "md"
+                      },
+                      mt: {
+                        base: 4,
+                        xs: 4,
+                        sm: "xs",
+                        md: "sm",
+                        lg: "sm",
+                        xl: "sm"
+                      },
+                      children: [
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                          import_core7.Text,
+                          {
+                            weight: 500,
+                            mr: 36,
+                            sx: (theme) => ({
+                              [theme.fn.largerThan("sm")]: {
+                                fontSize: theme.fontSizes.lg
+                              },
+                              [theme.fn.smallerThan("sm")]: {
+                                fontSize: theme.fontSizes.sm
+                              }
+                            }),
+                            children: data == null ? void 0 : data.title
+                          },
+                          void 0,
+                          !1,
+                          {
                             fileName: "app/components/MovieItem.tsx",
-                            lineNumber: 121,
-                            columnNumber: 21
-                          }, this),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
-                            import_core7.Rating,
-                            {
-                              mt: 4,
-                              value: ((data == null ? void 0 : data.vote_average) ?? 0) / 2,
-                              fractions: 3,
-                              readOnly: !0
-                            },
-                            void 0,
-                            !1,
-                            {
-                              fileName: "app/components/MovieItem.tsx",
-                              lineNumber: 127,
-                              columnNumber: 21
-                            },
-                            this
-                          )
-                        ]
-                      },
-                      void 0,
-                      !0,
-                      {
-                        fileName: "app/components/MovieItem.tsx",
-                        lineNumber: 114,
-                        columnNumber: 19
-                      },
-                      this
-                    ),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
-                      import_core7.Text,
-                      {
-                        mt: 4,
-                        title: data == null ? void 0 : data.overview,
-                        color: "dimmed",
-                        size: "sm",
-                        lineClamp: 2,
-                        sx: (theme) => ({
-                          [theme.fn.smallerThan("sm")]: {
-                            display: "-webkit-box"
+                            lineNumber: 123,
+                            columnNumber: 19
                           },
-                          [theme.fn.largerThan("sm")]: {
-                            display: "none"
-                          }
-                        }),
-                        children: data == null ? void 0 : data.overview
-                      },
-                      void 0,
-                      !1,
-                      {
-                        fileName: "app/components/MovieItem.tsx",
-                        lineNumber: 134,
-                        columnNumber: 19
-                      },
-                      this
-                    ),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
-                      import_core7.Text,
-                      {
-                        mt: 4,
-                        title: data == null ? void 0 : data.overview,
-                        color: "dimmed",
-                        size: "sm",
-                        lineClamp: 4,
-                        sx: (theme) => ({
-                          [theme.fn.largerThan("sm")]: {
-                            display: "-webkit-box"
+                          this
+                        ),
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                          import_core7.Flex,
+                          {
+                            wrap: "wrap",
+                            sx: (theme) => ({
+                              [theme.fn.smallerThan("xs")]: {
+                                display: "none"
+                              }
+                            }),
+                            children: (_a = data == null ? void 0 : data.genre_ids) == null ? void 0 : _a.map((id) => {
+                              var _a2;
+                              return /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Badge, { mr: 4, mb: 4, size: "sm", color: "indigo", children: (_a2 = genres == null ? void 0 : genres[id]) == null ? void 0 : _a2.name }, id, !1, {
+                                fileName: "app/components/MovieItem.tsx",
+                                lineNumber: 146,
+                                columnNumber: 23
+                              }, this);
+                            })
                           },
-                          [theme.fn.smallerThan("sm")]: {
-                            display: "none"
-                          }
-                        }),
-                        children: data == null ? void 0 : data.overview
-                      },
-                      void 0,
-                      !1,
-                      {
-                        fileName: "app/components/MovieItem.tsx",
-                        lineNumber: 151,
-                        columnNumber: 19
-                      },
-                      this
-                    )
-                  ] }, void 0, !0, {
-                    fileName: "app/components/MovieItem.tsx",
-                    lineNumber: 105,
-                    columnNumber: 17
-                  }, this)
+                          void 0,
+                          !1,
+                          {
+                            fileName: "app/components/MovieItem.tsx",
+                            lineNumber: 137,
+                            columnNumber: 19
+                          },
+                          this
+                        ),
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                          import_core7.Flex,
+                          {
+                            direction: "row",
+                            align: "center",
+                            justify: "space-between",
+                            mt: 4,
+                            wrap: "wrap",
+                            children: [
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Flex, { direction: "row", align: "center", color: "dimmed", mt: 4, children: [
+                                /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_icons_react3.IconCalendarEvent, {}, void 0, !1, {
+                                  fileName: "app/components/MovieItem.tsx",
+                                  lineNumber: 159,
+                                  columnNumber: 23
+                                }, this),
+                                /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(import_core7.Text, { ml: 4, size: "xs", component: "span", children: data == null ? void 0 : data.release_date }, void 0, !1, {
+                                  fileName: "app/components/MovieItem.tsx",
+                                  lineNumber: 160,
+                                  columnNumber: 23
+                                }, this)
+                              ] }, void 0, !0, {
+                                fileName: "app/components/MovieItem.tsx",
+                                lineNumber: 158,
+                                columnNumber: 21
+                              }, this),
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                                import_core7.Rating,
+                                {
+                                  size: "sm",
+                                  mt: 4,
+                                  value: ((data == null ? void 0 : data.vote_average) ?? 0) / 2,
+                                  fractions: 3,
+                                  readOnly: !0
+                                },
+                                void 0,
+                                !1,
+                                {
+                                  fileName: "app/components/MovieItem.tsx",
+                                  lineNumber: 164,
+                                  columnNumber: 21
+                                },
+                                this
+                              )
+                            ]
+                          },
+                          void 0,
+                          !0,
+                          {
+                            fileName: "app/components/MovieItem.tsx",
+                            lineNumber: 151,
+                            columnNumber: 19
+                          },
+                          this
+                        ),
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime12.jsxDEV)(
+                          import_core7.Text,
+                          {
+                            mt: 4,
+                            title: data == null ? void 0 : data.overview,
+                            color: "dimmed",
+                            size: "sm",
+                            lineClamp: 4,
+                            children: data == null ? void 0 : data.overview
+                          },
+                          void 0,
+                          !1,
+                          {
+                            fileName: "app/components/MovieItem.tsx",
+                            lineNumber: 172,
+                            columnNumber: 19
+                          },
+                          this
+                        )
+                      ]
+                    },
+                    void 0,
+                    !0,
+                    {
+                      fileName: "app/components/MovieItem.tsx",
+                      lineNumber: 105,
+                      columnNumber: 17
+                    },
+                    this
+                  )
                 ] }, void 0, !0, {
                   fileName: "app/components/MovieItem.tsx",
                   lineNumber: 69,
@@ -1859,7 +1888,7 @@ var import_jsx_dev_runtime17 = require("react/jsx-dev-runtime"), getParams2 = (s
 }, routes_default = Index;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "94dada93", entry: { module: "/build/entry.client-X36U6LYX.js", imports: ["/build/_shared/chunk-L47QJRAF.js", "/build/_shared/chunk-YNHLTX3R.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-PTKN2PTW.js", imports: ["/build/_shared/chunk-DS3B57DD.js", "/build/_shared/chunk-5PSC44L3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-EU4T7ZVO.js", imports: ["/build/_shared/chunk-NZDV4H7S.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie/$movieId": { id: "routes/movie/$movieId", parentId: "root", path: "movie/:movieId", index: void 0, caseSensitive: void 0, module: "/build/routes/movie/$movieId-SAGZKT6R.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/search": { id: "routes/search", parentId: "root", path: "search", index: void 0, caseSensitive: void 0, module: "/build/routes/search-7GRFRURV.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-NZDV4H7S.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-94DADA93.js" };
+var assets_manifest_default = { version: "0ec08544", entry: { module: "/build/entry.client-X36U6LYX.js", imports: ["/build/_shared/chunk-L47QJRAF.js", "/build/_shared/chunk-YNHLTX3R.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-PTKN2PTW.js", imports: ["/build/_shared/chunk-DS3B57DD.js", "/build/_shared/chunk-5PSC44L3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-I2USI7WQ.js", imports: ["/build/_shared/chunk-AP3Y5MJU.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie/$movieId": { id: "routes/movie/$movieId", parentId: "root", path: "movie/:movieId", index: void 0, caseSensitive: void 0, module: "/build/routes/movie/$movieId-SAGZKT6R.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/search": { id: "routes/search", parentId: "root", path: "search", index: void 0, caseSensitive: void 0, module: "/build/routes/search-FTFF2ADC.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-AP3Y5MJU.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-0EC08544.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

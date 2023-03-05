@@ -22,6 +22,7 @@ const AppHeader: React.FC = (props) => {
         w="100%"
         h="100%"
         display="flex"
+        px={{ xs: "md" }}
         sx={{ alignItems: "center" }}
       >
         <Flex w="100%" align="center" justify="space-between">
@@ -31,7 +32,7 @@ const AppHeader: React.FC = (props) => {
             </Text>
           </Link>
           <form method="get" action="/search">
-            <Flex>
+            <Flex ml="sm">
               <Input
                 name="q"
                 size="sm"

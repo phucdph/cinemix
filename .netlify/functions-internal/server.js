@@ -68,18 +68,19 @@ var import_core = require("@mantine/core"), import_react2 = require("@remix-run/
       w: "100%",
       h: "100%",
       display: "flex",
+      px: { xs: "md" },
       sx: { alignItems: "center" },
       children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_core.Flex, { w: "100%", align: "center", justify: "space-between", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Link, { to: "/", style: { textDecoration: "none" }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_core.Text, { weight: 800, size: "xl", color: "indigo", children: "CINEMIX" }, void 0, !1, {
           fileName: "app/components/AppHeader.tsx",
-          lineNumber: 29,
+          lineNumber: 30,
           columnNumber: 13
         }, this) }, void 0, !1, {
           fileName: "app/components/AppHeader.tsx",
-          lineNumber: 28,
+          lineNumber: 29,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("form", { method: "get", action: "/search", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_core.Flex, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("form", { method: "get", action: "/search", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_core.Flex, { ml: "sm", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(
           import_core.Input,
           {
             name: "q",
@@ -98,7 +99,7 @@ var import_core = require("@mantine/core"), import_react2 = require("@remix-run/
                 size: "lg",
                 children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_icons_react.IconSearch, { size: "1.2rem" }, void 0, !1, {
                   fileName: "app/components/AppHeader.tsx",
-                  lineNumber: 50,
+                  lineNumber: 51,
                   columnNumber: 21
                 }, this)
               },
@@ -106,7 +107,7 @@ var import_core = require("@mantine/core"), import_react2 = require("@remix-run/
               !1,
               {
                 fileName: "app/components/AppHeader.tsx",
-                lineNumber: 42,
+                lineNumber: 43,
                 columnNumber: 19
               },
               this
@@ -116,22 +117,22 @@ var import_core = require("@mantine/core"), import_react2 = require("@remix-run/
           !1,
           {
             fileName: "app/components/AppHeader.tsx",
-            lineNumber: 35,
+            lineNumber: 36,
             columnNumber: 15
           },
           this
         ) }, void 0, !1, {
           fileName: "app/components/AppHeader.tsx",
-          lineNumber: 34,
+          lineNumber: 35,
           columnNumber: 13
         }, this) }, void 0, !1, {
           fileName: "app/components/AppHeader.tsx",
-          lineNumber: 33,
+          lineNumber: 34,
           columnNumber: 11
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/AppHeader.tsx",
-        lineNumber: 27,
+        lineNumber: 28,
         columnNumber: 9
       }, this)
     },
@@ -1888,7 +1889,7 @@ var import_jsx_dev_runtime17 = require("react/jsx-dev-runtime"), getParams2 = (s
 }, routes_default = Index;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "0ec08544", entry: { module: "/build/entry.client-X36U6LYX.js", imports: ["/build/_shared/chunk-L47QJRAF.js", "/build/_shared/chunk-YNHLTX3R.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-PTKN2PTW.js", imports: ["/build/_shared/chunk-DS3B57DD.js", "/build/_shared/chunk-5PSC44L3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-I2USI7WQ.js", imports: ["/build/_shared/chunk-AP3Y5MJU.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie/$movieId": { id: "routes/movie/$movieId", parentId: "root", path: "movie/:movieId", index: void 0, caseSensitive: void 0, module: "/build/routes/movie/$movieId-SAGZKT6R.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/search": { id: "routes/search", parentId: "root", path: "search", index: void 0, caseSensitive: void 0, module: "/build/routes/search-FTFF2ADC.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-AP3Y5MJU.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-0EC08544.js" };
+var assets_manifest_default = { version: "7e0be25c", entry: { module: "/build/entry.client-X36U6LYX.js", imports: ["/build/_shared/chunk-L47QJRAF.js", "/build/_shared/chunk-YNHLTX3R.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-6R2LPNMA.js", imports: ["/build/_shared/chunk-DS3B57DD.js", "/build/_shared/chunk-5PSC44L3.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-I2USI7WQ.js", imports: ["/build/_shared/chunk-AP3Y5MJU.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/movie/$movieId": { id: "routes/movie/$movieId", parentId: "root", path: "movie/:movieId", index: void 0, caseSensitive: void 0, module: "/build/routes/movie/$movieId-SAGZKT6R.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/search": { id: "routes/search", parentId: "root", path: "search", index: void 0, caseSensitive: void 0, module: "/build/routes/search-FTFF2ADC.js", imports: ["/build/_shared/chunk-A6SAKP4O.js", "/build/_shared/chunk-AP3Y5MJU.js", "/build/_shared/chunk-UWNSNNZ6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-7E0BE25C.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
